@@ -9,16 +9,40 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mantine/core": "^5.2.7",
+    "@mantine/dates": "^5.2.7",
+    "@mantine/form": "^5.2.7",
+    "@mantine/hooks": "^5.2.7",
+    "@mantine/next": "^5.2.7",
+    "@mantine/notifications": "^5.2.7",
+    "autoprefixer": "^10.4.8",
+    "dayjs": "^1.11.5",
     "next": "12.3.0",
+    "postcss": "^8.4.16",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tabler-icons-react": "^1.54.0",
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
     "eslint-config-next": "12.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss-fluid-spacing": "^0.4.0",
     "typescript": "4.8.3"
   }
 }
