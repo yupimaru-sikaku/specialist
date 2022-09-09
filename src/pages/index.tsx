@@ -1,3 +1,4 @@
+import React from 'react';
 import { MicroCMSListResponse } from 'microcms-js-sdk';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
@@ -18,7 +19,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
         {props.contents.map((content) => {
           return (
             <li key={content.id}>
-              <Link href={`blog/${content.id}`}>
+              <Link href={`/blog/${content.id}`}>
                 <a>{content.title}</a>
               </Link>
             </li>

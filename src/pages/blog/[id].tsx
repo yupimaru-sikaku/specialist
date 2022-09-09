@@ -1,3 +1,4 @@
+import React from 'react';
 import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { Blog } from '..';
