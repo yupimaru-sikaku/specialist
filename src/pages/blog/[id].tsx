@@ -11,7 +11,7 @@ const BlogId: NextPage<Props> = (props) => {
     <div>
       <h1>{props.title}</h1>
       <time>{props.publishedAt}</time>
-      <div dangerouslySetInnerHTML={{ __html: props.body }} />
+      <div dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
   );
 };
