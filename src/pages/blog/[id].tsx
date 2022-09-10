@@ -1,8 +1,8 @@
 import React from 'react';
 import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { Blog } from '..';
 import { client } from 'src/libs/client';
+import { Blog } from 'src/types';
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
