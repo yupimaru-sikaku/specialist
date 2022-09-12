@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import 'tailwindcss/tailwind.css';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
+import { Layout } from 'src/components/Layout/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

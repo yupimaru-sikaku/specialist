@@ -15,3 +15,8 @@ export type Blog = {
     name: string;
   };
 };
+
+export type headerLinkType = {
+  link: string;
+  label: string;
+};

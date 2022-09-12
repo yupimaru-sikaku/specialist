@@ -1,50 +1,28 @@
 import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
-import { ComponentProps, useState } from 'react';
+import { BlogAsideBar } from 'src/components/Blog/BlogAsideBar';
+import { BlogList } from 'src/components/Blog/BlogList';
+import { Layout } from 'src/components/Layout/Layout';
 import { client } from 'src/libs/client';
 import { Blog } from 'src/types';
 
 type Props = MicroCMSListResponse<Blog>;
 
 const Blog: NextPage<Props> = (props) => {
-  const [search, setSearch] = useState<Props>();
-
-  const contentList = search ? search.contents : props.contents;
-  const totalCount = search ? search.totalCount : props.totalCount;
-
-  const handleSearch: ComponentProps<'form'>['onClick'] = async (e) => {
-    e.preventDefault();
-    const query = e.currentTarget.query.value;
-    const data = await fetch('/api/search', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query }),
-    });
-    const json: Props = await data.json();
-    setSearch(json);
-  };
-
   return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <input type="text" name="query" />
-        <button>検索</button>
-        <button>リセット</button>
-      </form>
-      <ul>
-        <p>{`${search ? '検索結果' : '記事の総数'}: ${totalCount}件`}</p>
-        {contentList.map((content) => {
-          return (
-            <li key={content.id}>
-              <Link href={`/blog/${content.id}`}>
-                <a>{content.title}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <Layout title="ブログ一覧 | スペシャリスト協会">
+      <div className="text-center">
+        <h1>SpecialBlog</h1>
+
+        <div className="p-vw-8" />
+
+        <div className="flex flex-col sm:flex-row ">
+          <BlogList blog={props} />
+          <div className="p-vw-4" />
+          <BlogAsideBar />
+        </div>
+      </div>
+    </Layout>
   );
 };
 
