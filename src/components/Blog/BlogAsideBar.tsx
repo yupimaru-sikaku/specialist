@@ -12,7 +12,7 @@ type Props = MicroCMSListResponse<Blog>;
 
 export const BlogAsideBar: NextPage = () => {
   const [blogList, setBlogList] = useState<Props>();
-  const toggleBlog = async (blogContent: 'popular' | 'latest') => {
+  const toggleBlog = async (blogContent: string | 'popular' | 'latest') => {
     const data = await fetch('/api/toggleBlog', {
       // 本来がGETだがBodyを渡したいのでPUT
       method: 'POST',
@@ -66,7 +66,7 @@ export const BlogAsideBar: NextPage = () => {
 
                   <div className="p-vw-2" />
 
-                  <p className="w-3/5 text-start text-md sm:text-xs font-extrabold md:text-sm">
+                  <p className="text-md w-3/5 text-start font-extrabold sm:text-xs md:text-sm">
                     {content.title}
                   </p>
                 </a>

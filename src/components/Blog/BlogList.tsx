@@ -34,7 +34,7 @@ export const BlogList: NextPage<Props> = (props) => {
   };
 
   const handleInput = useCallback(
-    (e) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value);
     },
     [search]
