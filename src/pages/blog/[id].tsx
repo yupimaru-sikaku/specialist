@@ -3,16 +3,26 @@ import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { client } from 'src/libs/microCMS/client';
 import { Blog } from 'src/types';
+import { Layout } from 'src/components/Layout/Layout';
+import { BlogAsideBar } from 'src/components/Blog/BlogAsideBar';
+import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
+import { BlogDetail } from 'src/components/Blog/BlogDetail';
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
+  const lagerThanSm = useMediaQuery('sm');
+
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <time>{props.publishedAt}</time>
-      <div dangerouslySetInnerHTML={{ __html: props.content }} />
-    </div>
+    <Layout title={`${props.title}`}>
+      <div className="flex flex-col sm:flex-row ">
+        <BlogDetail blog={props} />
+
+        {lagerThanSm ? <div className="p-vw-4" /> : <div className="p-vw-16" />}
+
+        <BlogAsideBar />
+      </div>
+    </Layout>
   );
 };
 

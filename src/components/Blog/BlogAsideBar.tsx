@@ -60,7 +60,7 @@ export const BlogAsideBar: NextPage = () => {
                       alt="eyecatch"
                       width={500}
                       height={350}
-                      className="transition-all ease-in group-hover:scale-125"
+                      className="transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
                     />
                   </div>
 

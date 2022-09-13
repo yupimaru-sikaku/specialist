@@ -1,4 +1,5 @@
 import { Button, MantineNumberSize, MantineSize } from '@mantine/core';
+import { ReactNode } from 'react';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
   radius?: MantineNumberSize;
   size?: MantineSize;
   disabled?: boolean;
-  children: string;
+  children: ReactNode;
   onClick?: any;
 };
 

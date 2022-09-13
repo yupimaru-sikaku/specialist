@@ -4,21 +4,24 @@ import type { AppProps } from 'next/app';
 import 'tailwindcss/tailwind.css';
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
-import { Layout } from 'src/components/Layout/Layout';
+import { store } from 'src/ducks/store';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
-      theme={{
-        fontFamily: 'Verdana, sans-serif',
-      }}
-    >
-      <NotificationsProvider limit={3}>
-        <Component {...pageProps} />
-      </NotificationsProvider>
-    </MantineProvider>
+    <Provider store={store}>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          fontFamily: 'Verdana, sans-serif',
+        }}
+      >
+        <NotificationsProvider limit={3}>
+          <Component {...pageProps} />
+        </NotificationsProvider>
+      </MantineProvider>
+    </Provider>
   );
 }
 
