@@ -2,35 +2,47 @@ import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { ComponentProps, useState } from 'react';
+import React, { ComponentProps, useCallback, useState } from 'react';
 import { Blog } from 'src/types';
 import { format } from 'date-fns';
 import { IconClock } from '@tabler/icons';
+import { IconAlarm } from '@tabler/icons';
+import { Input } from '@mantine/core';
+import { IconSearch } from '@tabler/icons';
+import { RegularButton } from 'src/components/Common/RegularButton';
 
 type Props = {
   blog: MicroCMSListResponse<Blog>;
 };
 
 export const BlogList: NextPage<Props> = (props) => {
-  const [search, setSearch] = useState<MicroCMSListResponse<Blog>>();
+  const [search, setSearch] = useState<string>('');
+  const [searchList, setSearchList] = useState<MicroCMSListResponse<Blog>>();
 
-  const contentList = search ? search.contents : props.blog.contents;
-  const totalCount = search ? search.totalCount : props.blog.totalCount;
+  const contentList = searchList ? searchList.contents : props.blog.contents;
+  const totalCount = searchList ? searchList.totalCount : props.blog.totalCount;
 
-  const handleSearch: ComponentProps<'form'>['onClick'] = async (e) => {
-    e.preventDefault();
-    const query = e.currentTarget.query.value;
+  const handleSearch = async () => {
+    const query = search;
     const data = await fetch('/api/searchBlog', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query }),
     });
     const json: MicroCMSListResponse<Blog> = await data.json();
-    setSearch(json);
+    setSearchList(json);
   };
 
+  const handleInput = useCallback(
+    (e) => {
+      setSearch(e.target.value);
+    },
+    [search]
+  );
+
   const handleReset = () => {
-    setSearch(undefined);
+    setSearch('');
+    setSearchList(undefined);
   };
 
   return (
@@ -39,13 +51,29 @@ export const BlogList: NextPage<Props> = (props) => {
 
       <div className="p-vw-8" />
 
-      <form onSubmit={handleSearch}>
-        <input type="text" name="query" />
-        <button>検索</button>
-        <button onClick={handleReset}>リセット</button>
+      <form className="flex flex-col xs:flex-row">
+        <Input
+          name="query"
+          value={search}
+          onChange={handleInput}
+          icon={<IconSearch />}
+          variant="filled"
+          placeholder="気になるワードを入力"
+          sx={{ minWidth: '320px' }}
+        />
+        <div className="p-vw-3" />
+        <div className="flex ">
+          <RegularButton onClick={handleSearch}>検索</RegularButton>
+          <div className="p-vw-1" />
+          <RegularButton color="dark" variant="outline" onClick={handleReset}>
+            リセット
+          </RegularButton>
+        </div>
       </form>
 
-      <p>{`${search ? '検索結果' : '記事の総数'}: ${totalCount}件`}</p>
+      <p className="text-gray-700">{`${
+        searchList ? '検索結果' : '記事の総数'
+      }: ${totalCount}件`}</p>
 
       <div className="p-vw-8" />
 
@@ -68,14 +96,16 @@ export const BlogList: NextPage<Props> = (props) => {
                   <div className="p-vw-4" />
 
                   <div className="w-3/5">
-                    <p className="font-extrabold">{content.title}</p>
+                    <p className="sm:text-md text-sm font-extrabold">
+                      {content.title}
+                    </p>
                     <div className="flex text-xs text-gray-500">
                       <p className="flex">
                         <IconClock size={16} />
                         {format(new Date(content.createdAt), 'yyyy年MM月dd日')}
                       </p>
-                      <p className="flex">
-                        <IconClock size={16} />
+                      <p className="ml-1 flex">
+                        <IconAlarm size={16} />
                         {format(new Date(content.updatedAt), 'yyyy年MM月dd日')}
                       </p>
                     </div>
