@@ -2,14 +2,13 @@ import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Blog } from 'src/types';
 import { format } from 'date-fns';
 import { IconClock } from '@tabler/icons';
 import { IconAlarm } from '@tabler/icons';
-import { ActionIcon, Input, Loader } from '@mantine/core';
+import { ActionIcon, Input } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
-import { RegularButton } from 'src/components/Common/RegularButton';
 import { useGetBlogListSearchQuery } from 'src/ducks/blog/query';
 import { IconZoomReset } from '@tabler/icons';
 
@@ -65,7 +64,7 @@ export const BlogList: NextPage<Props> = (props) => {
         />
         <div className="p-vw-3" />
         <div className="flex items-center">
-          <RegularButton onClick={handleSearch}>検索</RegularButton>
+          {/* <RegularButton onClick={handleSearch}>検索</RegularButton> */}
           <div className="p-vw-1" />
           <ActionIcon onClick={handleReset}>
             <IconZoomReset />
