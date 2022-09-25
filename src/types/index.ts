@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Blog = {
   title: string;
   content: string;
@@ -19,4 +21,10 @@ export type Blog = {
 export type headerLinkType = {
   link: string;
   label: string;
+  logo: any;
+};
+
+export type careerLinkType = {
+  date: string;
+  content: string;
 };
