@@ -42,7 +42,8 @@ export const BlogDetail: NextPage<Props> = (props) => {
       <div className="p-vw-4" />
       <Divider />
       <div className="p-vw-20" />
-      <BaseText content="small" color="dark">
+
+      <BaseText content="middle" color="dark">
         <div dangerouslySetInnerHTML={{ __html: content.content }} />
       </BaseText>
     </main>
