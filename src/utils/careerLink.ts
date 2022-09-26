@@ -11,7 +11,7 @@ export const careerLink: careerLinkType[] = [
   },
   {
     date: '2013年2月',
-    content: 'ラブパラオ設立',
+    content: 'パラオ設立',
   },
   {
     date: '同上',

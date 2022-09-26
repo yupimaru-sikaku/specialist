@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import { careerLink } from 'src/utils/careerLink';
 import { BaseText } from '../Common/BaseText';
+import { IconApiApp } from '@tabler/icons';
 
 export const CareerSection: NextPage = () => {
   return (
@@ -26,7 +27,12 @@ export const CareerSection: NextPage = () => {
 
       <div className="p-vw-10" />
 
-      <BaseText content="middle">代表理事　宮里　康和</BaseText>
+      <div className="flex items-center gap-2">
+        <IconApiApp color="green" />
+        <BaseText content="middle" color="dark">
+          代表理事　宮里　康和
+        </BaseText>
+      </div>
 
       <div className="p-vw-10" />
 
@@ -40,22 +46,18 @@ export const CareerSection: NextPage = () => {
 
         <div className="p-vw-10" />
 
-        <ul>
+        <ul className="text-center">
           {careerLink.map((career) => {
             return (
-              <>
-                <li
-                  key={career.content}
-                  className="grid"
-                  style={{ gridTemplateColumns: '40% 1fr' }}
-                >
+              <div key={career.content}>
+                <li className="grid" style={{ gridTemplateColumns: '40% 1fr' }}>
+                  <BaseText content="small">{career.date}</BaseText>
                   <BaseText content="small" color="dark">
-                    {career.date}
+                    {career.content}
                   </BaseText>
-                  <BaseText content="small">{career.content}</BaseText>
                 </li>
                 <div className="p-vw-10" />
-              </>
+              </div>
             );
           })}
         </ul>

@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 import { IconClock } from '@tabler/icons';
 import { IconAlarm } from '@tabler/icons';
 import { BaseText } from 'src/components/Common/BaseText';
+import { Divider } from '@mantine/core';
 
 type Props = {
   blog: Blog & MicroCMSContentId & MicroCMSDate;
@@ -38,9 +39,12 @@ export const BlogDetail: NextPage<Props> = (props) => {
         </BaseText>
       </time>
 
-      <div className="p-vw-10" />
-
-      <div dangerouslySetInnerHTML={{ __html: content.content }} />
+      <div className="p-vw-4" />
+      <Divider />
+      <div className="p-vw-20" />
+      <BaseText content="small" color="dark">
+        <div dangerouslySetInnerHTML={{ __html: content.content }} />
+      </BaseText>
     </main>
   );
 };
