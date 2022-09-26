@@ -3,10 +3,11 @@ import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { client } from 'src/libs/microCMS/client';
 import { Blog } from 'src/types';
-import { Layout } from 'src/components/Layout/Layout';
+import { SubLayout } from 'src/components/Layout/SubLayout';
 import { BlogAsideBar } from 'src/components/Blog/BlogAsideBar';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 import { BlogDetail } from 'src/components/Blog/BlogDetail';
+import { Divider } from '@mantine/core';
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
@@ -14,15 +15,23 @@ const BlogId: NextPage<Props> = (props) => {
   const lagerThanSm = useMediaQuery('sm');
 
   return (
-    <Layout title={`${props.title}`}>
+    <SubLayout title={`${props.title}`}>
       <div className="flex flex-col sm:flex-row ">
         <BlogDetail blog={props} />
 
-        {lagerThanSm ? <div className="p-vw-4" /> : <div className="p-vw-16" />}
+        {lagerThanSm ? (
+          <div className="p-vw-4" />
+        ) : (
+          <>
+            <div className="p-vw-16" />
+            <Divider />
+            <div className="p-vw-16" />
+          </>
+        )}
 
         <BlogAsideBar />
       </div>
-    </Layout>
+    </SubLayout>
   );
 };
 

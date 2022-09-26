@@ -1,16 +1,13 @@
-import { ActionIcon, CheckIcon } from '@mantine/core';
-import { IconX } from '@tabler/icons';
-import { showNotification } from '@mantine/notifications';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { headerLink } from 'src/utils/headerLink';
+import { useRouter } from 'next/router';
 
 type Props = {
   setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const NavBarModal = ({ setIsModal }: Props) => {
+  const router = useRouter();
   useEffect(() => {
     () => setIsModal(false);
   }, []);
@@ -46,15 +43,15 @@ export const NavBarModal = ({ setIsModal }: Props) => {
           <div className="p-6">
             <ul className="my-4 space-y-3">
               {headerLink.map((content) => (
-                <li key={content.label}>
-                  <Link scroll={false} href={content.link}>
-                    <a className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
-                      {<content.logo />}
-                      <span className="ml-3 flex-1 whitespace-nowrap">
-                        {content.label}
-                      </span>
-                    </a>
-                  </Link>
+                <li
+                  key={content.label}
+                  className="group flex cursor-pointer items-center rounded-lg bg-gray-50 p-3 text-base font-bold text-gray-900 hover:bg-gray-100 hover:shadow dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
+                  onClick={() => router.push(`${content.link}`)}
+                >
+                  {<content.logo />}
+                  <span className="ml-3 flex-1 whitespace-nowrap">
+                    {content.label}
+                  </span>
                 </li>
               ))}
             </ul>

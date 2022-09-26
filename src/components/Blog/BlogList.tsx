@@ -10,7 +10,9 @@ import { IconAlarm } from '@tabler/icons';
 import { ActionIcon, Input } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import { useGetBlogListSearchQuery } from 'src/ducks/blog/query';
-import { IconZoomReset } from '@tabler/icons';
+import { IconBackspace } from '@tabler/icons';
+import { BaseText } from 'src/components/Common/BaseText';
+import { BaseButton } from 'src/components/Common/BaseButton';
 
 type Props = {
   blog: MicroCMSListResponse<Blog>;
@@ -48,7 +50,11 @@ export const BlogList: NextPage<Props> = (props) => {
 
   return (
     <main className="w-full text-start sm:w-2/3">
-      <h1>ブログ一覧</h1>
+      <h1>
+        <BaseText content="large" align="center">
+          ブログ一覧
+        </BaseText>
+      </h1>
 
       <div className="p-vw-8" />
 
@@ -60,21 +66,22 @@ export const BlogList: NextPage<Props> = (props) => {
           icon={<IconSearch />}
           variant="filled"
           placeholder="気になるワードを入力"
-          sx={{ minWidth: '280px' }}
         />
-        <div className="p-vw-3" />
-        <div className="flex items-center">
-          {/* <RegularButton onClick={handleSearch}>検索</RegularButton> */}
-          <div className="p-vw-1" />
+        <div className="p-vw-4" />
+        <div className="flex items-center justify-start">
+          <BaseButton onClick={handleSearch}>検索</BaseButton>
+          <div className="p-vw-4" />
           <ActionIcon onClick={handleReset}>
-            <IconZoomReset />
+            <IconBackspace />
           </ActionIcon>
         </div>
       </form>
 
-      <p className="text-gray-700">{`${
-        searchList ? '検索結果' : '記事の総数'
-      }: ${totalCount}件`}</p>
+      <div className="p-vw-16" />
+
+      <BaseText content="small">
+        {`${searchList ? '検索結果' : '記事の総数'}: ${totalCount}件`}
+      </BaseText>
 
       <div className="p-vw-8" />
 
@@ -86,8 +93,11 @@ export const BlogList: NextPage<Props> = (props) => {
             return (
               <li key={content.id}>
                 <Link href={`/blog/${content.id}`}>
-                  <a className="group flex">
-                    <div className="relative w-2/5 overflow-hidden rounded-xl">
+                  <a
+                    className="group grid items-start"
+                    style={{ gridTemplateColumns: '40% 1fr' }}
+                  >
+                    <div className="overflow-hidden rounded-xl">
                       <Image
                         src={content.eyecatch.url}
                         alt="eyecatch"
@@ -98,37 +108,42 @@ export const BlogList: NextPage<Props> = (props) => {
                       />
                     </div>
 
-                    <div className="p-vw-4" />
-
-                    <div className="w-3/5">
-                      <p className="sm:text-md text-sm font-extrabold">
+                    <div className="ml-4">
+                      <BaseText content="small" color="dark" lineClamp={3}>
                         {content.title}
-                      </p>
-                      <div className="flex text-xs text-gray-500">
-                        <p className="flex">
-                          <IconClock size={16} />
+                      </BaseText>
+                      <time
+                        className="grid items-center"
+                        style={{ gridTemplateColumns: '20px 1fr' }}
+                      >
+                        <IconClock size={14} />
+                        <BaseText content="small">
                           {format(
                             new Date(content.createdAt),
                             'yyyy年MM月dd日'
                           )}
-                        </p>
-                        <p className="ml-1 flex">
-                          <IconAlarm size={16} />
+                        </BaseText>
+                      </time>
+                      <time
+                        className="grid items-center"
+                        style={{ gridTemplateColumns: '20px 1fr' }}
+                      >
+                        <IconAlarm size={16} />
+                        <BaseText content="small">
                           {format(
                             new Date(content.updatedAt),
                             'yyyy年MM月dd日'
                           )}
-                        </p>
-                      </div>
+                        </BaseText>
+                      </time>
                     </div>
                   </a>
                 </Link>
-                <div className="p-vw-4" />
+                <div className="p-vw-16" />
               </li>
             );
           })
         )}
-        <div className="p-vw-1" />
       </ul>
     </main>
   );

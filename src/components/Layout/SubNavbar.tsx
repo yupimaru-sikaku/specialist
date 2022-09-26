@@ -8,7 +8,7 @@ import { BaseText } from 'src/components/Common/BaseText';
 import { useState } from 'react';
 import { NavBarModal } from 'src/components/Layout/NavbarModal';
 
-export const Navbar = () => {
+export const SubNavbar = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
   const largerThanSm = useMediaQuery('sm');
 
@@ -21,24 +21,11 @@ export const Navbar = () => {
   }
 
   return (
-    <header className="relative flex h-screen items-start justify-between">
-      <Image src="/specialist_hero.png" layout="fill" height={200} />
-      <p className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl sm:leading-none">
-        Sports
-        <br />
-        Has
-        <br />
-        NoBorder
-      </p>
-      <p className="texts-sm absolute top-3/4 left-10 font-bold leading-loose tracking-widest text-white sm:text-xl">
-        走ってみよう。
-        <br />
-        新しい世界が君を歓迎してくれる。
-      </p>
-      <div className="z-10 ml-4 mt-4">
+    <header className="flex justify-between">
+      <div className="ml-4 mt-4">
         <Link href="/">
           <a>
-            <BaseText content="middle" weight={900} color="white">
+            <BaseText content="middle" weight={900} color="dark">
               Specialist
             </BaseText>
           </a>
@@ -57,7 +44,6 @@ export const Navbar = () => {
                     <a>
                       <ActionIcon
                         sx={{
-                          color: 'white',
                           padding: '4px',
                           border: '1px solid',
                         }}
@@ -71,7 +57,7 @@ export const Navbar = () => {
             })}
           </ul>
         ) : (
-          <ActionIcon sx={{ color: 'white' }} onClick={() => setIsModal(true)}>
+          <ActionIcon onClick={() => setIsModal(true)}>
             <IconMenu2 />
           </ActionIcon>
         )}

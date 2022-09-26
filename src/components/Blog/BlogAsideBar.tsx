@@ -1,12 +1,11 @@
 import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { NextPage } from 'next';
-import React, { ComponentProps, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Blog } from 'src/types';
 import { SegmentedControl } from '@mantine/core';
-import { format } from 'date-fns';
 import Link from 'next/link';
-import { IconClock } from '@tabler/icons';
 import Image from 'next/image';
+import { BaseText } from '../Common/BaseText';
 
 type Props = MicroCMSListResponse<Blog>;
 
@@ -29,32 +28,32 @@ export const BlogAsideBar: NextPage = () => {
 
   return (
     <aside className="w-full sm:block sm:w-1/3">
-      <nav>
-        <SegmentedControl
-          id="article"
-          radius="md"
-          color="yellow"
-          aria-required
-          onChange={(e) => toggleBlog(e)}
-          classNames={{
-            root: 'bg-transparent rounded',
-          }}
-          data={[
-            { label: '人気の記事', value: 'popular' },
-            { label: '最新記事', value: 'latest' },
-          ]}
-        />
-      </nav>
+      <SegmentedControl
+        id="article"
+        radius="md"
+        color="yellow"
+        aria-required
+        fullWidth
+        size="xs"
+        onChange={(e) => toggleBlog(e)}
+        data={[
+          { label: '人気の記事', value: 'popular' },
+          { label: '最新記事', value: 'latest' },
+        ]}
+      />
 
-      <div className="p-vw-4" />
+      <div className="p-vw-16" />
 
       <ul>
         {blogList?.contents.map((content) => {
           return (
             <li key={content.id}>
               <Link href={`/blog/${content.id}`}>
-                <a className="flex-start group flex">
-                  <div className="relative w-2/5 overflow-hidden rounded-xl">
+                <a
+                  className="group grid"
+                  style={{ gridTemplateColumns: '40% 1fr' }}
+                >
+                  <div className="overflow-hidden rounded-xl">
                     <Image
                       src={content.eyecatch.url}
                       alt="eyecatch"
@@ -63,20 +62,17 @@ export const BlogAsideBar: NextPage = () => {
                       className="transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
                     />
                   </div>
-
-                  <div className="p-vw-2" />
-
-                  <p className="text-md w-3/5 text-start font-extrabold sm:text-xs md:text-sm">
-                    {content.title}
-                  </p>
+                  <div className="ml-4">
+                    <BaseText content="small" color="dark" lineClamp={3}>
+                      {content.title}
+                    </BaseText>
+                  </div>
                 </a>
               </Link>
-
-              <div className="p-vw-4" />
+              <div className="p-vw-8" />
             </li>
           );
         })}
-        <div className="p-vw-1" />
       </ul>
     </aside>
   );

@@ -5,6 +5,7 @@ import { Blog } from 'src/types';
 import { format } from 'date-fns';
 import { IconClock } from '@tabler/icons';
 import { IconAlarm } from '@tabler/icons';
+import { BaseText } from 'src/components/Common/BaseText';
 
 type Props = {
   blog: Blog & MicroCMSContentId & MicroCMSDate;
@@ -15,20 +16,27 @@ export const BlogDetail: NextPage<Props> = (props) => {
 
   return (
     <main className="w-full text-start sm:w-2/3">
-      <h1 className="text-2xl font-extrabold">{content.title}</h1>
+      <h1 className="text-2xl font-extrabold">
+        <BaseText content="large" color="dark">
+          {content.title}
+        </BaseText>
+      </h1>
 
       <div className="p-vw-2" />
 
-      <div className="flex text-xs text-gray-500">
-        <p className="flex">
-          <IconClock size={16} />
+      <time
+        className="grid items-center"
+        style={{ gridTemplateColumns: '20px 1fr 20px 1fr' }}
+      >
+        <IconClock size={14} />
+        <BaseText content="small">
           {format(new Date(content.createdAt), 'yyyy年MM月dd日')}
-        </p>
-        <p className="ml-1 flex">
-          <IconAlarm size={16} />
+        </BaseText>
+        <IconAlarm size={16} />
+        <BaseText content="small">
           {format(new Date(content.updatedAt), 'yyyy年MM月dd日')}
-        </p>
-      </div>
+        </BaseText>
+      </time>
 
       <div className="p-vw-10" />
 

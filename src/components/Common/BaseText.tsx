@@ -9,6 +9,8 @@ type Props = {
   color?: DefaultMantineColor | 'dimmed';
   gradient?: MantineGradient;
   lineClamp?: number;
+  size?: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  span?: boolean;
   variant?: 'link' | 'text' | 'gradient';
   weight?: number;
   content: 'large' | 'middle' | 'small';
@@ -23,6 +25,8 @@ export const BaseText: NextPage<Props> = ({
   gradient,
   // ex）gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
   lineClamp,
+  size,
+  span,
   variant = 'text',
   weight = 400,
   content,
@@ -55,7 +59,7 @@ export const BaseText: NextPage<Props> = ({
       color={color}
       gradient={gradient}
       lineClamp={lineClamp}
-      size={fontSize}
+      size={size ? size : fontSize}
       variant={variant}
       weight={weight}
       sx={{ lineHeight: lineHeight, letterSpacing: letterSpacing }}
