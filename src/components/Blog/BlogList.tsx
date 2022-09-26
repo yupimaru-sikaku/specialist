@@ -109,7 +109,7 @@ export const BlogList: NextPage<Props> = (props) => {
                     </div>
 
                     <div className="ml-4">
-                      <BaseText content="small" color="dark" lineClamp={3}>
+                      <BaseText content="middle" color="dark" lineClamp={3}>
                         {content.title}
                       </BaseText>
                       <time
