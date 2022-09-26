@@ -63,7 +63,7 @@ export const BlogAsideBar: NextPage = () => {
                     />
                   </div>
                   <div className="ml-4">
-                    <BaseText content="middle" color="dark" lineClamp={3}>
+                    <BaseText content="small" color="dark" lineClamp={3}>
                       {content.title}
                     </BaseText>
                   </div>
