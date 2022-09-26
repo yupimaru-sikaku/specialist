@@ -28,8 +28,8 @@ export const GreetingSecion = () => {
         <div className="md:w-1/2">
           <Image
             src="/greeting_miyazato.webp"
-            width={400}
-            height={300}
+            width={800}
+            height={600}
             className="rounded-xl"
           />
         </div>

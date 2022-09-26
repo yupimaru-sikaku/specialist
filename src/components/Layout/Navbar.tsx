@@ -23,7 +23,7 @@ export const Navbar = () => {
   return (
     <header className="relative flex h-screen items-start justify-between">
       <Image src="/specialist_hero.png" layout="fill" priority={true} />
-      <p className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl sm:leading-none">
+      <p className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl">
         Sports
         <br />
         Has

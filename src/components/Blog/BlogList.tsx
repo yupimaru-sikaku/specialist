@@ -21,6 +21,7 @@ type Props = {
 export const BlogList: NextPage<Props> = (props) => {
   const [search, setSearch] = useState<string>('');
   const [searchList, setSearchList] = useState<MicroCMSListResponse<Blog>>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { data, isError } = useGetBlogListSearchQuery(search, {
     skip: search === '',
   });
@@ -32,8 +33,11 @@ export const BlogList: NextPage<Props> = (props) => {
     ? searchList.totalCount
     : props.blog.totalCount;
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 500));
     setSearchList(data);
+    setIsLoading(false);
   };
 
   const handleInput = useCallback(
@@ -69,7 +73,9 @@ export const BlogList: NextPage<Props> = (props) => {
         />
         <div className="p-vw-4" />
         <div className="flex items-center justify-start">
-          <BaseButton onClick={handleSearch}>検索</BaseButton>
+          <BaseButton onClick={handleSearch} loading={isLoading}>
+            検索
+          </BaseButton>
           <div className="p-vw-4" />
           <ActionIcon onClick={handleReset}>
             <IconBackspace />

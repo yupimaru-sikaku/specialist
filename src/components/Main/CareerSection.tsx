@@ -40,8 +40,8 @@ export const CareerSection: NextPage = () => {
         <div className="md:w-1/2">
           <Image
             src="/career_miyazato.webp"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             className="rounded-xl"
           />
         </div>
@@ -53,8 +53,8 @@ export const CareerSection: NextPage = () => {
             return (
               <div key={career.content}>
                 <li className="grid" style={{ gridTemplateColumns: '40% 1fr' }}>
-                  <BaseText content="small">{career.date}</BaseText>
-                  <BaseText content="small" color="dark">
+                  <BaseText content="middle">{career.date}</BaseText>
+                  <BaseText content="middle" color="dark">
                     {career.content}
                   </BaseText>
                 </li>
