@@ -3,7 +3,6 @@ import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { GetStaticProps, NextPage } from 'next';
 import { BlogAsideBar } from 'src/components/Blog/BlogAsideBar';
 import { BlogList } from 'src/components/Blog/BlogList';
-import { BaseText } from 'src/components/Common/BaseText';
 import { SubLayout } from 'src/components/Layout/SubLayout';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 import { client } from 'src/libs/microCMS/client';

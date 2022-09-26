@@ -1,6 +1,6 @@
 import { Button, MantineColor, MantineGradient } from '@mantine/core';
 import { NextPage } from 'next';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 
 type Props = {
@@ -21,7 +21,7 @@ type Props = {
     | 'filled'
     | 'subtle'
     | 'gradient';
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
+  onClick?: () => void;
 };
 
 export const BaseButton: NextPage<Props> = ({
@@ -35,9 +35,8 @@ export const BaseButton: NextPage<Props> = ({
   radius = 'sm',
   size,
   variant = 'filled',
+  onClick,
 }) => {
-  const [fontSize, setFontSize] = useState<number>();
-  const lagerThanXs = useMediaQuery('xs');
   const lagerThanMd = useMediaQuery('md');
 
   const buttonSize = lagerThanMd ? 'sm' : 'xs';
@@ -53,6 +52,7 @@ export const BaseButton: NextPage<Props> = ({
       radius={radius}
       size={size ? size : buttonSize}
       variant={variant}
+      onClick={onClick}
     >
       {children}
     </Button>

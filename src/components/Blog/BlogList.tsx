@@ -21,7 +21,7 @@ type Props = {
 export const BlogList: NextPage<Props> = (props) => {
   const [search, setSearch] = useState<string>('');
   const [searchList, setSearchList] = useState<MicroCMSListResponse<Blog>>();
-  const { data, isError, isLoading } = useGetBlogListSearchQuery(search, {
+  const { data, isError } = useGetBlogListSearchQuery(search, {
     skip: search === '',
   });
 
@@ -32,7 +32,7 @@ export const BlogList: NextPage<Props> = (props) => {
     ? searchList.totalCount
     : props.blog.totalCount;
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
     setSearchList(data);
   };
 
@@ -40,7 +40,7 @@ export const BlogList: NextPage<Props> = (props) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value);
     },
-    [handleSearch]
+    [search]
   );
 
   const handleReset = () => {
@@ -58,7 +58,7 @@ export const BlogList: NextPage<Props> = (props) => {
 
       <div className="p-vw-8" />
 
-      <form className="flex flex-col xs:flex-row">
+      <div className="flex flex-col xs:flex-row">
         <Input
           name="query"
           value={search}
@@ -75,7 +75,7 @@ export const BlogList: NextPage<Props> = (props) => {
             <IconBackspace />
           </ActionIcon>
         </div>
-      </form>
+      </div>
 
       <div className="p-vw-16" />
 

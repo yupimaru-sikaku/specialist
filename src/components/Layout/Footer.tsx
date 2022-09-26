@@ -24,7 +24,7 @@ export const Footer = () => {
         <ul className="mb-6 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mb-0">
           {headerLink.map((content) => {
             return (
-              <Link href={content.link}>
+              <Link href={content.link} key={content.label}>
                 <a>
                   <li key={content.label} className="p-1">
                     <ActionIcon
