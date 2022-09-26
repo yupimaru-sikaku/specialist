@@ -36,17 +36,19 @@ export const CareerSection: NextPage = () => {
 
       <div className="p-vw-10" />
 
-      <div>
-        <Image
-          src="/career_miyazato.webp"
-          width={400}
-          height={400}
-          className="rounded-xl"
-        />
+      <div className="md:flex">
+        <div className="md:w-1/2">
+          <Image
+            src="/career_miyazato.webp"
+            width={400}
+            height={400}
+            className="rounded-xl"
+          />
+        </div>
 
         <div className="p-vw-10" />
 
-        <ul className="text-center">
+        <ul className="text-center md:w-1/2">
           {careerLink.map((career) => {
             return (
               <div key={career.content}>
@@ -56,7 +58,7 @@ export const CareerSection: NextPage = () => {
                     {career.content}
                   </BaseText>
                 </li>
-                <div className="p-vw-10" />
+                <div className="p-vw-4" />
               </div>
             );
           })}
