@@ -19,7 +19,7 @@ export const Layout: NextPage<Props> = ({
         <title>{title}</title>
       </Head>
       <Navbar />
-      <main className="my-12 flex-grow px-10 sm:px-10 md:my-20 md:px-20">
+      <main className="my-12 flex-grow px-5 sm:px-10 md:my-20 md:px-20">
         {children}
       </main>
       <Footer />
