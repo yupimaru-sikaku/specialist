@@ -2,7 +2,8 @@ import { Divider } from '@mantine/core';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
-import { careerLink } from 'src/utils/careerLink';
+import { miyazatoCareerLink } from 'src/utils/miyazatoCareerLink';
+import { miyazatoRecordLink } from 'src/utils/miyazatoRecordLink';
 import { BaseText } from '../Common/BaseText';
 import { IconApiApp } from '@tabler/icons';
 
@@ -20,7 +21,7 @@ export const CareerSection: NextPage = () => {
         CAREER
       </BaseText>
       <BaseText content="middle" align="center">
-        経営陣略歴
+        経営陣紹介
       </BaseText>
       <div className="p-vw-10" />
       <Divider />
@@ -37,32 +38,74 @@ export const CareerSection: NextPage = () => {
       <div className="p-vw-10" />
 
       <div className="md:flex">
-        <div className="md:w-1/2">
-          <Image
-            src="/career_miyazato.webp"
-            width={500}
-            height={500}
-            className="rounded-xl"
-          />
+        <div className="flex md:w-1/2">
+          <section>
+            <Image
+              src="/career_miyazato.webp"
+              width={500}
+              height={500}
+              className="rounded-xl"
+            />
+            {/* <Image
+              src="/career_miyazato.webp"
+              width={500}
+              height={500}
+              className="rounded-xl mt-10"
+            /> */}
+          </section>
         </div>
 
         <div className="p-vw-10" />
+        <section className="text-center md:w-1/2">
+          <BaseText content="middle" align="center" color="green" weight={900}>
+            略歴
+          </BaseText>
+          <div className="p-vw-10" />
 
-        <ul className="text-center md:w-1/2">
-          {careerLink.map((career) => {
-            return (
-              <div key={career.content}>
-                <li className="grid" style={{ gridTemplateColumns: '40% 1fr' }}>
-                  <BaseText content="middle">{career.date}</BaseText>
-                  <BaseText content="middle" color="dark">
-                    {career.content}
-                  </BaseText>
-                </li>
-                <div className="p-vw-4" />
-              </div>
-            );
-          })}
-        </ul>
+          <ul>
+            {miyazatoCareerLink.map((career) => {
+              return (
+                <div key={career.content}>
+                  <li
+                    className="grid"
+                    style={{ gridTemplateColumns: '40% 1fr' }}
+                  >
+                    <BaseText content="middle">{career.date}</BaseText>
+                    <BaseText content="middle" align="start" color="dark">
+                      {career.content}
+                    </BaseText>
+                  </li>
+                  <div className="p-vw-4" />
+                </div>
+              );
+            })}
+          </ul>
+
+          <div className="p-vw-10" />
+          <BaseText content="middle" align="center" color="green" weight={900}>
+            実績
+          </BaseText>
+          <div className="p-vw-10" />
+
+          <ul>
+            {miyazatoRecordLink.map((career) => {
+              return (
+                <div key={career.content}>
+                  <li
+                    className="grid"
+                    style={{ gridTemplateColumns: '40% 1fr' }}
+                  >
+                    <BaseText content="middle">{career.date}</BaseText>
+                    <BaseText content="middle" align="start" color="dark">
+                      {career.content}
+                    </BaseText>
+                  </li>
+                  <div className="p-vw-4" />
+                </div>
+              );
+            })}
+          </ul>
+        </section>
       </div>
     </div>
   );

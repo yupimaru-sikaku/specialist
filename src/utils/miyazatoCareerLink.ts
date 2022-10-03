@@ -1,6 +1,6 @@
 import { careerLinkType } from 'src/types';
 
-export const careerLink: careerLinkType[] = [
+export const miyazatoCareerLink: careerLinkType[] = [
   {
     date: '1997年',
     content: 'ダイハツ工業入社',

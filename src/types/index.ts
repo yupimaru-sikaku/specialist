@@ -28,3 +28,8 @@ export type careerLinkType = {
   date: string;
   content: string;
 };
+
+export type recordLinkType = {
+  date: string;
+  content: string;
+};

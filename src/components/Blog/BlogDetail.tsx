@@ -17,7 +17,7 @@ export const BlogDetail: NextPage<Props> = (props) => {
   const content = props.blog;
 
   return (
-    <main className="w-full p-0 text-start sm:w-2/3 sm:rounded-xl sm:border sm:p-10">
+    <main className="w-full p-0 text-start sm:w-2/3 sm:rounded-xl sm:border sm:p-10 sm:shadow-lg">
       <h1 className="text-2xl font-extrabold">
         <BaseText content="large" color="dark">
           {content.title}

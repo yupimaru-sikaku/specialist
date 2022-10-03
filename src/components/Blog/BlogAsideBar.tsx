@@ -2,7 +2,7 @@ import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import React, { useEffect, useState } from 'react';
 import { Blog } from 'src/types';
-import { SegmentedControl } from '@mantine/core';
+import { Loader, SegmentedControl } from '@mantine/core';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BaseText } from '../Common/BaseText';
@@ -10,8 +10,10 @@ import { BaseText } from '../Common/BaseText';
 type Props = MicroCMSListResponse<Blog>;
 
 export const BlogAsideBar: NextPage = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [blogList, setBlogList] = useState<Props>();
   const toggleBlog = async (blogContent: string | 'popular' | 'latest') => {
+    setIsLoading(true);
     const data = await fetch('/api/toggleBlog', {
       // 本来がGETだがBodyを渡したいのでPUT
       method: 'POST',
@@ -20,6 +22,7 @@ export const BlogAsideBar: NextPage = () => {
     });
     const json = await data.json();
     setBlogList(json);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -35,6 +38,7 @@ export const BlogAsideBar: NextPage = () => {
         aria-required
         fullWidth
         size="xs"
+        disabled={isLoading}
         onChange={(e) => toggleBlog(e)}
         data={[
           { label: '人気の記事', value: 'popular' },
@@ -42,38 +46,42 @@ export const BlogAsideBar: NextPage = () => {
         ]}
       />
 
-      <div className="p-vw-16" />
+      <div className="p-vw-10" />
 
-      <ul>
-        {blogList?.contents.map((content) => {
-          return (
-            <li key={content.id}>
-              <Link href={`/blog/${content.id}`}>
-                <a
-                  className="group grid"
-                  style={{ gridTemplateColumns: '40% 1fr' }}
-                >
-                  <div className="overflow-hidden rounded-xl">
-                    <Image
-                      src={content.eyecatch.url}
-                      alt="eyecatch"
-                      width={500}
-                      height={350}
-                      className="transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
-                    />
-                  </div>
-                  <div className="ml-4">
-                    <BaseText content="small" color="dark" lineClamp={3}>
-                      {content.title}
-                    </BaseText>
-                  </div>
-                </a>
-              </Link>
-              <div className="p-vw-8" />
-            </li>
-          );
-        })}
-      </ul>
+      {isLoading ? (
+        <Loader sx={{ margin: 'auto' }} />
+      ) : (
+        <ul>
+          {blogList?.contents.map((content) => {
+            return (
+              <li key={content.id}>
+                <Link href={`/blog/${content.id}`}>
+                  <a
+                    className="group grid"
+                    style={{ gridTemplateColumns: '40% 1fr' }}
+                  >
+                    <div className="flex items-center overflow-hidden rounded-xl">
+                      <Image
+                        src={content.eyecatch.url}
+                        alt="eyecatch"
+                        width={500}
+                        height={350}
+                        className="rounded-xl transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <BaseText content="small" color="dark" lineClamp={3}>
+                        {content.title}
+                      </BaseText>
+                    </div>
+                  </a>
+                </Link>
+                <div className="p-vw-8" />
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </aside>
   );
 };

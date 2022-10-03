@@ -7,12 +7,13 @@ import { Blog } from 'src/types';
 import { format } from 'date-fns';
 import { IconClock } from '@tabler/icons';
 import { IconAlarm } from '@tabler/icons';
-import { ActionIcon, Input } from '@mantine/core';
+import { ActionIcon, Divider, Input } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import { useGetBlogListSearchQuery } from 'src/ducks/blog/query';
 import { IconBackspace } from '@tabler/icons';
 import { BaseText } from 'src/components/Common/BaseText';
 import { BaseButton } from 'src/components/Common/BaseButton';
+import { BrandLogoList } from 'src/components/Common/BrandLogoList';
 
 type Props = {
   blog: MicroCMSListResponse<Blog>;
@@ -53,7 +54,7 @@ export const BlogList: NextPage<Props> = (props) => {
   };
 
   return (
-    <main className="w-full text-start sm:w-2/3">
+    <main className="w-full text-start sm:w-2/3 sm:rounded-xl sm:border sm:p-10 sm:shadow-lg">
       <h1>
         <BaseText content="large" align="center">
           ブログ一覧
@@ -76,14 +77,18 @@ export const BlogList: NextPage<Props> = (props) => {
           <BaseButton onClick={handleSearch} loading={isLoading}>
             検索
           </BaseButton>
-          <div className="p-vw-4" />
+          <div className="p-vw-2" />
           <ActionIcon onClick={handleReset}>
             <IconBackspace />
           </ActionIcon>
         </div>
       </div>
 
-      <div className="p-vw-16" />
+      <div className="p-vw-8" />
+      <Divider />
+      <BrandLogoList />
+      <Divider />
+      <div className="p-vw-8" />
 
       <BaseText content="small">
         {`${searchList ? '検索結果' : '記事の総数'}: ${totalCount}件`}
@@ -103,14 +108,14 @@ export const BlogList: NextPage<Props> = (props) => {
                     className="group grid items-start"
                     style={{ gridTemplateColumns: '40% 1fr' }}
                   >
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="flex items-center overflow-hidden rounded-xl">
                       <Image
                         src={content.eyecatch.url}
                         alt="eyecatch"
                         priority={false}
                         width={500}
                         height={350}
-                        className="transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
+                        className="rounded-xl transition-all ease-in group-hover:scale-125 group-hover:opacity-60"
                       />
                     </div>
 
