@@ -44,6 +44,7 @@ export const CareerSection: NextPage = () => {
               src="/career_miyazato.webp"
               width={500}
               height={500}
+              alt="miyazato_pic"
               className="rounded-xl"
             />
             {/* <Image

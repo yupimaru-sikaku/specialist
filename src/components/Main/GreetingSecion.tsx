@@ -30,6 +30,7 @@ export const GreetingSecion = () => {
             src="/greeting_miyazato.webp"
             width={800}
             height={600}
+            alt="miyazato_pic"
             className="rounded-xl"
           />
         </div>

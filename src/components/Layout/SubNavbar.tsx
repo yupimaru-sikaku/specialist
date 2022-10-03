@@ -32,7 +32,12 @@ export const SubNavbar = () => {
         </Link>
       </div>
       <div className="absolute top-1 left-1/2 -translate-x-1/2 transform">
-        <Image src="/specialist_logo_2.webp" width={60} height={50} />
+        <Image
+          src="/specialist_logo_2.webp"
+          width={60}
+          height={50}
+          alt="logo"
+        />
       </div>
       <nav className="mr-6 mt-4">
         {largerThanSm ? (

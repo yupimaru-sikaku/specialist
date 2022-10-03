@@ -11,7 +11,12 @@ export const Footer = () => {
       <div className="sm:flex sm:items-center sm:justify-between">
         <Link href="/">
           <a className="flex items-center">
-            <Image src="/specialist_logo_2.webp" width={50} height={50} />
+            <Image
+              src="/specialist_logo_2.webp"
+              alt="logo"
+              width={50}
+              height={50}
+            />
             <div className="p-vw-4" />
             <BaseText content="large" color="dark">
               Specialist
