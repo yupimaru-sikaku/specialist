@@ -3,18 +3,21 @@ import type { NextPage } from 'next';
 import { Layout } from 'src/components/Layout/Layout';
 import { GreetingSecion } from 'src/components/Main/GreetingSecion';
 import { CareerSection } from 'src/components/Main/CareerSection';
+import { DownUpScreenTransition } from 'src/components/Common/DownUpScreenTransition';
 
 const Home: NextPage = () => {
   return (
-    <Layout title="トップページ | スペシャリスト協会">
-      <div className="p-vw-32" />
+    <DownUpScreenTransition>
+      <Layout title="トップページ | スペシャリスト協会">
+        <div className="p-vw-32" />
 
-      <GreetingSecion />
+        <GreetingSecion />
 
-      <div className="p-vw-32" />
+        <div className="p-vw-32" />
 
-      <CareerSection />
-    </Layout>
+        <CareerSection />
+      </Layout>
+    </DownUpScreenTransition>
   );
 };
 
