@@ -47,18 +47,12 @@ export const CareerSection: NextPage = () => {
               alt="miyazato_pic"
               className="rounded-xl"
             />
-            {/* <Image
-              src="/career_miyazato.webp"
-              width={500}
-              height={500}
-              className="rounded-xl mt-10"
-            /> */}
           </section>
         </div>
 
         <div className="p-vw-10" />
         <section className="text-center md:w-1/2">
-          <BaseText content="middle" align="center" color="green" weight={900}>
+          <BaseText content="large" align="center" color="green" weight={900}>
             略歴
           </BaseText>
           <div className="p-vw-10" />
@@ -83,7 +77,7 @@ export const CareerSection: NextPage = () => {
           </ul>
 
           <div className="p-vw-10" />
-          <BaseText content="middle" align="center" color="green" weight={900}>
+          <BaseText content="large" align="center" color="green" weight={900}>
             実績
           </BaseText>
           <div className="p-vw-10" />

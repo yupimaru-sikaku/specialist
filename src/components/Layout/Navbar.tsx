@@ -22,7 +22,12 @@ export const Navbar = () => {
 
   return (
     <header className="relative flex h-screen items-start justify-between">
-      <Image src="/specialist_hero.png" layout="fill" priority={true} alt="hero_logo"/>
+      <Image
+        src="/specialist_hero.png"
+        layout="fill"
+        priority={true}
+        alt="hero_logo"
+      />
       <p className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl">
         Sports
         <br />
@@ -45,7 +50,12 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className="absolute top-1 left-1/2 -translate-x-1/2 transform">
-        <Image src="/specialist_logo_2.webp" width={60} height={50} alt="hero_logo"/>
+        <Image
+          src="/specialist_logo_2.webp"
+          width={60}
+          height={50}
+          alt="hero_logo"
+        />
       </div>
       <nav className="mr-6 mt-4">
         {largerThanSm ? (

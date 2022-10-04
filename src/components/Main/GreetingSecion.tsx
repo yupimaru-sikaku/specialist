@@ -21,7 +21,6 @@ export const GreetingSecion = () => {
       </BaseText>
       <div className="p-vw-10" />
       <Divider />
-
       <div className="p-vw-10" />
 
       <div className="md:flex">
