@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="rounded-lg bg-white p-4 shadow dark:bg-gray-900 md:px-6 md:py-8">
       <div className="sm:flex sm:items-center sm:justify-between">
-        <Link href="/">
+        <Link href="/" scroll={false}>
           <a className="flex items-center">
             <Image
               src="/specialist_logo_2.webp"
@@ -29,7 +29,7 @@ export const Footer = () => {
         <ul className="mb-6 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mb-0">
           {headerLink.map((content) => {
             return (
-              <Link href={content.link} key={content.label}>
+              <Link href={content.link} key={content.label} scroll={false}>
                 <a>
                   <li key={content.label} className="p-1">
                     <ActionIcon

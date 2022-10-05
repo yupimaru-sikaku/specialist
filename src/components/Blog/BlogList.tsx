@@ -103,7 +103,7 @@ export const BlogList: NextPage<Props> = (props) => {
           contentList.map((content) => {
             return (
               <li key={content.id}>
-                <Link href={`/blog/${content.id}`}>
+                <Link href={`/blog/${content.id}`} scroll={false}>
                   <a
                     className="group grid items-start"
                     style={{ gridTemplateColumns: '40% 1fr' }}

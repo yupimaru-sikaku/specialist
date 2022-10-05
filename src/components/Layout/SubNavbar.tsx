@@ -23,7 +23,7 @@ export const SubNavbar = () => {
   return (
     <header className="flex justify-between">
       <div className="ml-4 mt-4">
-        <Link href="/">
+        <Link href="/" scroll={false}>
           <a>
             <BaseText content="middle" weight={900} color="dark">
               Specialist
@@ -45,7 +45,7 @@ export const SubNavbar = () => {
             {headerLink.map((content) => {
               return (
                 <li key={content.label} className="p-2">
-                  <Link href="/blog">
+                  <Link href="/blog" scroll={false}>
                     <a>
                       <ActionIcon
                         sx={{

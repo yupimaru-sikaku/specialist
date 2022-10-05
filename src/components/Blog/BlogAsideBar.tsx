@@ -55,7 +55,7 @@ export const BlogAsideBar: NextPage = () => {
           {blogList?.contents.map((content) => {
             return (
               <li key={content.id}>
-                <Link href={`/blog/${content.id}`}>
+                <Link href={`/blog/${content.id}`} scroll={false}>
                   <a
                     className="group grid"
                     style={{ gridTemplateColumns: '40% 1fr' }}

@@ -42,7 +42,7 @@ export const Navbar = () => {
         </UpScreenTransition>
       </div>
       <div className="z-10 ml-4 mt-4">
-        <Link href="/">
+        <Link href="/" scroll={false}>
           <a>
             <BaseText content="middle" weight={900} color="white">
               Specialist
@@ -64,7 +64,7 @@ export const Navbar = () => {
             {headerLink.map((content) => {
               return (
                 <li key={content.label} className="p-2">
-                  <Link href="/blog">
+                  <Link href="/blog" scroll={false}>
                     <a>
                       <ActionIcon
                         sx={{
