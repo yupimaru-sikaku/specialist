@@ -7,6 +7,7 @@ import { headerLink } from 'src/utils/headerLink';
 import { BaseText } from 'src/components/Common/BaseText';
 import { useState } from 'react';
 import { NavBarModal } from 'src/components/Layout/NavbarModal';
+import { UpScreenTransition } from 'src/components/Common/UpScreenTransition';
 
 export const Navbar = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
@@ -28,18 +29,18 @@ export const Navbar = () => {
         priority={true}
         alt="hero_logo"
       />
-      <p className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl">
-        Sports
-        <br />
-        Has
-        <br />
-        NoBorder
-      </p>
-      <p className="texts-sm absolute top-3/4 left-10 font-bold leading-loose tracking-widest text-white sm:text-xl">
-        走ってみよう。
-        <br />
-        新しい世界が君を歓迎してくれる。
-      </p>
+
+      <div className="absolute top-1/2 left-10 -translate-y-1/2 transform text-3xl font-bold leading-loose tracking-widest text-white sm:text-4xl">
+        <UpScreenTransition duration={1}>Sports</UpScreenTransition>
+        <UpScreenTransition duration={1.2}>Has</UpScreenTransition>
+        <UpScreenTransition duration={1.4}>NoBorder</UpScreenTransition>
+      </div>
+      <div className="texts-sm absolute top-3/4 left-10 font-bold leading-loose tracking-widest text-white sm:text-xl">
+        <UpScreenTransition duration={1.6}>走ってみよう。</UpScreenTransition>
+        <UpScreenTransition duration={1.8}>
+          新しい世界が君を歓迎してくれる。
+        </UpScreenTransition>
+      </div>
       <div className="z-10 ml-4 mt-4">
         <Link href="/">
           <a>

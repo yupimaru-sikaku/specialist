@@ -22,7 +22,6 @@ export const GreetingSecion = () => {
       <div className="p-vw-10" />
       <Divider />
       <div className="p-vw-10" />
-
       <div className="md:flex">
         <div className="md:w-1/2">
           <Image
