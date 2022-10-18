@@ -33,3 +33,13 @@ export type recordLinkType = {
   date: string;
   content: string;
 };
+
+export type mainMenuCarouselLinkType = {
+  label: string;
+  hiragana: string;
+};
+
+export type mainMenuCarouselLinkContentType = {
+  label: string;
+  link: string;
+};

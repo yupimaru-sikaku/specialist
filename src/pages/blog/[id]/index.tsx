@@ -8,7 +8,6 @@ import { BlogAsideBar } from 'src/components/Blog/BlogAsideBar';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 import { BlogDetail } from 'src/components/Blog/BlogDetail';
 import { Divider } from '@mantine/core';
-import { DownUpScreenTransition } from 'src/components/Common/DownUpScreenTransition';
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
@@ -16,7 +15,6 @@ const BlogId: NextPage<Props> = (props) => {
   const lagerThanSm = useMediaQuery('sm');
 
   return (
-    <DownUpScreenTransition>
     <SubLayout title={`${props.title}`}>
       <div className="flex flex-col sm:flex-row ">
         <BlogDetail blog={props} />
@@ -34,7 +32,6 @@ const BlogId: NextPage<Props> = (props) => {
         <BlogAsideBar />
       </div>
     </SubLayout>
-    </DownUpScreenTransition>
   );
 };
 

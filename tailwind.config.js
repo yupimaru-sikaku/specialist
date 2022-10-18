@@ -11,7 +11,13 @@ module.exports = {
       lg: '1200px',
       xl: '1400px',
     },
-    extend: {},
+    extend: {
+      colors: {
+        navy: {
+          900: '#123159',
+        },
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
@@ -19,7 +25,7 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
   ],
   corePlugins: {
-  // MantineUIとTailwindCSSを一緒に使うとコンポーネントがうまく表示されない。その対策
+    // MantineUIとTailwindCSSを一緒に使うとコンポーネントがうまく表示されない。その対策
     preflight: false,
   },
   darkMode: 'class',

@@ -7,7 +7,6 @@ import { SubLayout } from 'src/components/Layout/SubLayout';
 import { useMediaQuery } from 'src/libs/mantine/useMediaQuery';
 import { client } from 'src/libs/microCMS/client';
 import { Blog } from 'src/types';
-import { DownUpScreenTransition } from 'src/components/Common/DownUpScreenTransition';
 
 type Props = MicroCMSListResponse<Blog>;
 
@@ -15,24 +14,21 @@ const Blog: NextPage<Props> = (props) => {
   const lagerThanSm = useMediaQuery('sm');
 
   return (
-    <DownUpScreenTransition>
-      <SubLayout title="ブログ一覧 | スペシャリスト協会">
-        <div className="flex flex-col sm:flex-row ">
-          <BlogList blog={props} />
+    <SubLayout title="ブログ一覧 | スペシャリスト協会">
+      <div className="flex flex-col sm:flex-row ">
+        <BlogList blog={props} />
 
-          {lagerThanSm ? (
-            <div className="p-vw-4" />
-          ) : (
-            <>
-              <div className="p-vw-16" /> <Divider />{' '}
-              <div className="p-vw-16" />
-            </>
-          )}
+        {lagerThanSm ? (
+          <div className="p-vw-4" />
+        ) : (
+          <>
+            <div className="p-vw-16" /> <Divider /> <div className="p-vw-16" />
+          </>
+        )}
 
-          <BlogAsideBar />
-        </div>
-      </SubLayout>
-    </DownUpScreenTransition>
+        <BlogAsideBar />
+      </div>
+    </SubLayout>
   );
 };
 

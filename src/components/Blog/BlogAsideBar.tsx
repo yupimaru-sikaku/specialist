@@ -5,7 +5,7 @@ import { Blog } from 'src/types';
 import { Loader, SegmentedControl } from '@mantine/core';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BaseText } from '../Common/BaseText';
+import { BaseText } from 'src/components/Common/BaseText';
 
 type Props = MicroCMSListResponse<Blog>;
 

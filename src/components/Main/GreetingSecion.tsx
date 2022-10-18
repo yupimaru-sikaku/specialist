@@ -1,7 +1,7 @@
 import { Divider } from '@mantine/core';
 import Image from 'next/image';
 import React from 'react';
-import { BaseText } from '../Common/BaseText';
+import { BaseText } from 'src/components/Common/BaseText';
 
 export const GreetingSecion = () => {
   return (

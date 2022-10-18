@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import { miyazatoCareerLink } from 'src/utils/miyazatoCareerLink';
 import { miyazatoRecordLink } from 'src/utils/miyazatoRecordLink';
-import { BaseText } from '../Common/BaseText';
+import { BaseText } from 'src/components/Common/BaseText';
 import { IconApiApp } from '@tabler/icons';
 
 export const CareerSection: NextPage = () => {

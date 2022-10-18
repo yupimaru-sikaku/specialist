@@ -6,7 +6,6 @@ import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { store } from 'src/ducks/store';
 import { Provider } from 'react-redux';
-import { AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -19,12 +18,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         }}
       >
         <NotificationsProvider limit={3}>
-          <AnimatePresence
-            exitBeforeEnter
-            onExitComplete={() => window.scrollTo(0, 0)}
-          >
             <Component key={router.asPath} {...pageProps} />
-          </AnimatePresence>
         </NotificationsProvider>
       </MantineProvider>
     </Provider>
