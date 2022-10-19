@@ -8,6 +8,7 @@ import { Blog } from 'src/types';
 import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { client } from 'src/libs/microCMS/client';
 import { MainYouTubeList } from 'src/components/Main/MainYouTubeList';
+import { MainSponsorList } from 'src/components/Main/MainSponsorList';
 
 type Props = MicroCMSListResponse<Blog>;
 
@@ -18,6 +19,7 @@ const Home: NextPage<Props> = (props) => {
       <MainImageCarousel />
       <MainNewsList blog={props} />
       <MainYouTubeList />
+      <MainSponsorList />
     </Layout>
   );
 };

@@ -16,6 +16,9 @@ module.exports = {
         navy: {
           900: '#123159',
         },
+        yellow: {
+          900: '#FCD400',
+        },
       },
     },
   },

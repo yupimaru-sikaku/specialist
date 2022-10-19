@@ -24,16 +24,16 @@ export const NavBarModal = ({ setIsModal }: Props) => {
   return (
     <div className="h-modal z-100 fixed top-0 right-0 left-0 flex w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
       <div className="relative h-full w-full max-w-md p-4 md:h-auto">
-        <div className="relative rounded-lg bg-white shadow">
+        <div className="relative rounded-l shadow">
           <ActionIcon
             onClick={() => setIsModal(false)}
             className="absolute top-3 right-2.5 p-1.5 hover:bg-gray-200 hover:text-gray-900"
             size="lg"
           >
-            <IconX />
+            <IconX color="white" />
           </ActionIcon>
-          <div className="rounded-t border-b py-4 px-6">
-            <h3 className="text-base font-semibold text-gray-900 lg:text-xl">
+          <div className="rounded-t py-4 px-6">
+            <h3 className="text-base font-semibold text-gray-100 lg:text-xl">
               メニュー
             </h3>
           </div>
@@ -42,18 +42,26 @@ export const NavBarModal = ({ setIsModal }: Props) => {
               chevron={<IconPlus size={16} />}
               styles={{
                 chevron: {
+                  color: 'white',
                   '&[data-rotate]': {
                     transform: 'rotate(45deg)',
                   },
                 },
+                item: {
+                  border: 'none',
+                },
               }}
             >
               <Accordion.Item value="SCHEDULE">
-                <Accordion.Control>SCHEDULE</Accordion.Control>
+                <Accordion.Control>
+                  <BaseText content="middle" color="white">
+                    SCHEDULE
+                  </BaseText>
+                </Accordion.Control>
                 {scheduleList.map((content) => (
-                  <Accordion.Panel>
+                  <Accordion.Panel key={content.label}>
                     <Link href={content.link}>
-                      <a>
+                      <a className="text-center">
                         <BaseText content="middle">{content.label}</BaseText>
                       </a>
                     </Link>
@@ -61,11 +69,15 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                 ))}
               </Accordion.Item>
               <Accordion.Item value="NEWS">
-                <Accordion.Control>NEWS</Accordion.Control>
+                <Accordion.Control>
+                  <BaseText content="middle" color="white">
+                    NEWS
+                  </BaseText>
+                </Accordion.Control>
                 {newsList.map((content) => (
-                  <Accordion.Panel>
+                  <Accordion.Panel key={content.label}>
                     <Link href={content.link}>
-                      <a>
+                      <a className="text-center">
                         <BaseText content="middle">{content.label}</BaseText>
                       </a>
                     </Link>
@@ -73,11 +85,15 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                 ))}
               </Accordion.Item>
               <Accordion.Item value="SHOPS">
-                <Accordion.Control>SHOPS</Accordion.Control>
+                <Accordion.Control>
+                  <BaseText content="middle" color="white">
+                    SHOPS
+                  </BaseText>
+                </Accordion.Control>
                 {shopList.map((content) => (
-                  <Accordion.Panel>
+                  <Accordion.Panel key={content.label}>
                     <Link href={content.link}>
-                      <a>
+                      <a className="text-center">
                         <BaseText content="middle">{content.label}</BaseText>
                       </a>
                     </Link>
@@ -85,11 +101,15 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                 ))}
               </Accordion.Item>
               <Accordion.Item value="SPONSOR">
-                <Accordion.Control>SPONSOR</Accordion.Control>
+                <Accordion.Control>
+                  <BaseText content="middle" color="white">
+                    SPONSOR
+                  </BaseText>
+                </Accordion.Control>
                 {sponsorList.map((content) => (
-                  <Accordion.Panel>
+                  <Accordion.Panel key={content.label}>
                     <Link href={content.link}>
-                      <a>
+                      <a className="text-center">
                         <BaseText content="middle">{content.label}</BaseText>
                       </a>
                     </Link>
