@@ -57,6 +57,9 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                   <BaseText content="middle" color="white">
                     SCHEDULE
                   </BaseText>
+                  <BaseText content="small" color="white">
+                    スケジュール
+                  </BaseText>
                 </Accordion.Control>
                 {scheduleList.map((content) => (
                   <Accordion.Panel key={content.label}>
@@ -72,6 +75,9 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                 <Accordion.Control>
                   <BaseText content="middle" color="white">
                     NEWS
+                  </BaseText>
+                  <BaseText content="small" color="white">
+                    ニュース
                   </BaseText>
                 </Accordion.Control>
                 {newsList.map((content) => (
@@ -89,6 +95,9 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                   <BaseText content="middle" color="white">
                     SHOPS
                   </BaseText>
+                  <BaseText content="small" color="white">
+                    ショップ
+                  </BaseText>
                 </Accordion.Control>
                 {shopList.map((content) => (
                   <Accordion.Panel key={content.label}>
@@ -104,6 +113,9 @@ export const NavBarModal = ({ setIsModal }: Props) => {
                 <Accordion.Control>
                   <BaseText content="middle" color="white">
                     SPONSOR
+                  </BaseText>
+                  <BaseText content="small" color="white">
+                    スポンサー
                   </BaseText>
                 </Accordion.Control>
                 {sponsorList.map((content) => (

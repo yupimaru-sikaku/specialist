@@ -35,7 +35,7 @@ export type recordLinkType = {
 };
 
 export type mainMenuCarouselLinkType = {
-  label: string;
+  label: 'SCHEDULE' | 'NEWS' | 'SHOPS' | 'SPONSOR';
   hiragana: string;
 };
 

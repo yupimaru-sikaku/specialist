@@ -25,7 +25,7 @@ export const Navbar = () => {
           width={45}
           height={45}
         />
-        <p className="ml-2 text-gray-100">Specialist</p>
+        <p className="ml-2 text-gray-100">スペシャリスト協会</p>
       </div>
       <ActionIcon onClick={() => setIsModal(true)} className="mr-3">
         <IconMenu2 color="white" />
