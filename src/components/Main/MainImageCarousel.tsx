@@ -18,7 +18,21 @@ export const MainImageCarousel = () => {
       }}
     >
       <Carousel.Slide>
-        <img src="/specialist_hero.png" alt="hero" />
+        <img src="/specialist_hero.png" alt="hero" className="object-contain" />
+      </Carousel.Slide>
+      <Carousel.Slide>
+        <img
+          src="/specialist_hero_2.jpg"
+          alt="hero"
+          className="object-contain"
+        />
+      </Carousel.Slide>
+      <Carousel.Slide>
+        <img
+          src="/specialist_hero_3.jpg"
+          alt="hero"
+          className="object-contain"
+        />
       </Carousel.Slide>
     </Carousel>
     // </div>

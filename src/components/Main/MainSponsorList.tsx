@@ -6,8 +6,8 @@ import { BaseText } from 'src/components/Common/BaseText';
 export const MainSponsorList = () => {
   return (
     <div>
-      <h2 className="flex h-14 items-center justify-center bg-yellow-900">
-        <BaseText content="large" color="dark">
+      <h2 className="flex h-14 items-center justify-center bg-navy-900">
+        <BaseText content="large" color="white">
           スポンサー
         </BaseText>
       </h2>

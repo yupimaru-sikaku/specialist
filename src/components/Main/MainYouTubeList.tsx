@@ -12,8 +12,8 @@ const opts = {
 export const MainYouTubeList = () => {
   return (
     <div>
-      <h2 className="flex h-14 items-center justify-center bg-navy-900">
-        <BaseText content="large" color="white">
+      <h2 className="flex h-14 items-center justify-center bg-yellow-900">
+        <BaseText content="large" color="dark">
           YouTube
         </BaseText>
       </h2>
