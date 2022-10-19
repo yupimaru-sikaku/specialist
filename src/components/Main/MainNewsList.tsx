@@ -1,11 +1,11 @@
-import { Divider } from '@mantine/core';
+import { Badge, Divider } from '@mantine/core';
 import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Blog } from 'src/types';
-import { formatDate } from 'src/utils';
+import { formatDate, isOneMonthAgo } from 'src/utils';
 import { BaseText } from 'src/components/Common/BaseText';
 
 type Props = {
@@ -43,6 +43,17 @@ export const MainNewsList: NextPage<Props> = (props) => {
                           {formatDate(content.createdAt)}
                         </BaseText>
                       </time>
+                      {isOneMonthAgo(content.createdAt) && (
+                        <Badge
+                          color="yellow"
+                          size="xs"
+                          radius="xs"
+                          variant="filled"
+                          classNames={{ root: 'w-10' }}
+                        >
+                          新着
+                        </Badge>
+                      )}
                       <BaseText content="small" lineClamp={2} color="dark">
                         {content.title}
                       </BaseText>

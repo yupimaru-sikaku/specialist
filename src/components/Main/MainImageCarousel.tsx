@@ -9,7 +9,7 @@ export const MainImageCarousel = () => {
       height={212}
       // slideSize={500}
       align="start"
-      dragFree
+      // dragFree
       loop
       styles={{
         control: {

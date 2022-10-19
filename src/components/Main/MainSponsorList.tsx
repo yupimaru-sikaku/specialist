@@ -14,6 +14,9 @@ export const MainSponsorList = () => {
       <div className="p-vw-20" />
       <ul className="flex flex-col items-center gap-10">
         <li>
+          <Image src="/ishitomi.png" width={200} height={150} />
+        </li>
+        <li>
           <Image src="/novarex.jpg" width={200} height={50} />
         </li>
         <li>

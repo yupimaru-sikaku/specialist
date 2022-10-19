@@ -10,7 +10,6 @@ import {
 } from 'src/utils/mainMenuCarouselList';
 import {
   mainMenuCarouselLinkContentType,
-  mainMenuCarouselLinkType,
 } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import Link from 'next/link';
