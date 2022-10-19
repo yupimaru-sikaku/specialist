@@ -8,9 +8,7 @@ import {
   shopList,
   sponsorList,
 } from 'src/utils/mainMenuCarouselList';
-import {
-  mainMenuCarouselLinkContentType,
-} from 'src/types';
+import { mainMenuCarouselLinkContentType } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import Link from 'next/link';
 
@@ -79,7 +77,10 @@ export const MainMenuCarousel = () => {
       {isListOpen && contentList && (
         <ul className="bg-gray-500">
           {contentList.map((content) => (
-            <Link href={content.link} key={content.label}>
+            <Link
+              href={content.link}
+              key={content.label}
+            >
               <a>
                 <li className="pb-2 hover:cursor-pointer">
                   <BaseText align="center" content="middle" color="white">

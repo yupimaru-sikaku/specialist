@@ -1,13 +1,12 @@
-import { ActionIcon, Divider } from '@mantine/core';
+import { Divider } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { BaseText } from 'src/components/Common/BaseText';
-import { headerLink } from 'src/utils/headerLink';
 
 export const Footer = () => {
   return (
-    <footer className="rounded-l bg-navy-900 shadow md:px-6 md:py-8">
+    <footer className="bg-navy-900 shadow md:px-6 md:py-8">
       <div className="p-vw-10" />
 
       <div className="flex items-center justify-center">
