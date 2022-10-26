@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Carousel } from '@mantine/carousel';
-import { Accordion } from '@mantine/core';
+import { Accordion, Collapse } from '@mantine/core';
 import {
   mainMenuCarouselList,
   newsList,
@@ -10,10 +10,10 @@ import { mainMenuCarouselLinkContentType } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Autoplay from 'embla-carousel-autoplay';
 
 export const MainMenuCarousel = () => {
   const router = useRouter();
+  const [opened, setOpened] = useState(false);
   const [contentType, setContentType] = useState('');
   const [contentList, setContentList] = useState<
     mainMenuCarouselLinkContentType[]
@@ -23,8 +23,8 @@ export const MainMenuCarousel = () => {
   const handleSetContentType = (content: string) => {
     setContentType(content);
     contentType === content
-      ? setIsListOpen((prevState) => !prevState)
-      : setIsListOpen(true);
+      ? setOpened((prevState) => !prevState)
+      : setOpened(true);
     switch (content) {
       case 'RECORD':
         setContentList(recordList);
@@ -75,8 +75,12 @@ export const MainMenuCarousel = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
-      {isListOpen && contentList && (
-        <ul className="animate-tracking-in-expand bg-gray-500">
+      <Collapse
+        in={opened}
+        transitionDuration={300}
+        transitionTimingFunction="linear"
+      >
+        <ul className="bg-gray-500">
           {contentList.map((content) => (
             <Link href={content.link} key={content.label}>
               <a>
@@ -89,7 +93,7 @@ export const MainMenuCarousel = () => {
             </Link>
           ))}
         </ul>
-      )}
+      </Collapse>
     </main>
   );
 };
