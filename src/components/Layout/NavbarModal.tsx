@@ -76,26 +76,34 @@ export const NavBarModal = () => {
             </Accordion.Item>
           </a>
         </Link>
-        <Accordion.Item value="SPONSOR">
-          <Accordion.Control>
-            <BaseText content="middle" color="white">
-              SPONSOR
-            </BaseText>
-            <BaseText content="small" color="white">
-              スポンサー
-            </BaseText>
-          </Accordion.Control>
-        </Accordion.Item>
-        <Accordion.Item value="SUPPORT">
-          <Accordion.Control>
-            <BaseText content="middle" color="white">
-              SUPPORT
-            </BaseText>
-            <BaseText content="small" color="white">
-              サポート
-            </BaseText>
-          </Accordion.Control>
-        </Accordion.Item>
+        <Link href="/sponsor">
+          <a>
+            <Accordion.Item value="SPONSOR">
+              <Accordion.Control>
+                <BaseText content="middle" color="white">
+                  SPONSOR
+                </BaseText>
+                <BaseText content="small" color="white">
+                  スポンサー
+                </BaseText>
+              </Accordion.Control>
+            </Accordion.Item>
+          </a>
+        </Link>
+        <Link href="/support">
+          <a>
+            <Accordion.Item value="SUPPORT">
+              <Accordion.Control>
+                <BaseText content="middle" color="white">
+                  SUPPORT
+                </BaseText>
+                <BaseText content="small" color="white">
+                  サポート
+                </BaseText>
+              </Accordion.Control>
+            </Accordion.Item>
+          </a>
+        </Link>
         <Link href="/member">
           <a>
             <Accordion.Item value="MEMBER">

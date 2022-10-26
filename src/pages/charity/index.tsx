@@ -6,7 +6,7 @@ const Charity = () => {
   return (
     <Layout title="グッズ一覧 | スペシャリスト育成支援協会">
       <MainMenuCarousel />
-      <div>Charity</div>
+      <div className='h-screen'>Charity</div>
     </Layout>
   );
 };

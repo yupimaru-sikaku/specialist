@@ -10,7 +10,7 @@ import { DataTable } from 'mantine-datatable';
 export const MemberList = () => {
   return (
     <div className="bg-ash-500 p-3">
-      <div className="bg-white px-3 rounded-md">
+      <div className="rounded-md bg-white px-3">
         <div className="p-vw-10" />
 
         <BaseText content="large" align="center" color="dark">
@@ -32,7 +32,9 @@ export const MemberList = () => {
               />
             </div>
             <div className="flex-grow bg-ash-900 p-3">
-              <BaseText content="small" color="white">代表理事</BaseText>
+              <BaseText content="small" color="white">
+                代表理事
+              </BaseText>
               <BaseText content="middle" color="white">
                 宮里　康和
               </BaseText>
@@ -140,23 +142,6 @@ export const MemberList = () => {
           ※五十音順
         </BaseText>
 
-        {/* <Table withBorder withColumnBorders captionSide="bottom">
-        <caption>※五十音順</caption>
-        <thead>
-          <tr>
-            <th>名前</th>
-            <th>職種</th>
-          </tr>
-        </thead>
-        <tbody>
-          {memberList.map((content) => (
-            <tr className="w-1/2" key={content.name}>
-              <td>{content.name}</td>
-              <td>{content.post}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table> */}
         <div className="p-vw-10" />
       </div>
     </div>
