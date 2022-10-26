@@ -4,7 +4,8 @@ import { BaseText } from 'src/components/Common/BaseText';
 import Image from 'next/image';
 import { miyazatoRecordLink } from 'src/utils/miyazatoRecordLink';
 import { miyazatoCareerLink } from 'src/utils/miyazatoCareerLink';
-import { memberList } from 'src/utils/memberList';
+import memberList from 'src/utils/memberList.json';
+import { DataTable } from 'mantine-datatable';
 
 export const MemberList = () => {
   return (
@@ -19,7 +20,7 @@ export const MemberList = () => {
       <div className="p-vw-10" />
       <div className="md:flex">
         <div className="flex items-end md:w-1/2">
-          <div className="w-1/3">
+          <div className="w-2/5">
             <Image
               src="/career_miyazato.webp"
               width={100}
@@ -58,6 +59,9 @@ export const MemberList = () => {
           </BaseText>
         </div>
       </div>
+
+      <div className="p-vw-10" />
+
       <section className="text-center md:w-1/2">
         <BaseText content="large" align="center" weight={900} color="yellow">
           略歴
@@ -110,7 +114,18 @@ export const MemberList = () => {
       <Divider />
       <div className="p-vw-10" />
 
-      <Table withBorder withColumnBorders captionSide="bottom">
+      <DataTable
+        striped
+        withBorder
+        withColumnBorders
+        columns={[
+          { accessor: 'name', title: '名前', width: '40%' },
+          { accessor: 'post', title: '職種' },
+        ]}
+        records={memberList}
+      ></DataTable>
+
+      {/* <Table withBorder withColumnBorders captionSide="bottom">
         <caption>※五十音順</caption>
         <thead>
           <tr>
@@ -120,13 +135,13 @@ export const MemberList = () => {
         </thead>
         <tbody>
           {memberList.map((content) => (
-            <tr className="w-1/2">
+            <tr className="w-1/2" key={content.name}>
               <td>{content.name}</td>
               <td>{content.post}</td>
             </tr>
           ))}
         </tbody>
-      </Table>
+      </Table> */}
       <div className="p-vw-10" />
     </div>
   );
