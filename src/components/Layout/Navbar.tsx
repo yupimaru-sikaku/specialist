@@ -8,16 +8,7 @@ import { NavBarModal } from './NavbarModal';
 import { newsList, recordList } from 'src/utils/mainMenuCarouselList';
 
 export const Navbar = () => {
-  const [isModal, setIsModal] = useState<boolean>(false);
   const [opened, setOpened] = useState(false);
-
-  if (isModal) {
-    return (
-      <div className="fixed top-0 z-50 h-screen w-screen bg-navy-900">
-        <NavBarModal setIsModal={setIsModal} />
-      </div>
-    );
-  }
 
   return (
     <header className="flex h-14 items-center justify-between bg-navy-900">
