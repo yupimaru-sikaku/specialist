@@ -20,6 +20,11 @@ module.exports = {
         yellow: {
           900: '#FCD400',
         },
+        ash: {
+          100: '#EEEEEE',
+          500: '#D7D8D8',
+          900: '#4F4F4F',
+        },
       },
     },
   },

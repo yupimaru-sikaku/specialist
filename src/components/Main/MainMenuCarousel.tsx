@@ -51,7 +51,7 @@ export const MainMenuCarousel = () => {
             opacity: '0.3',
           },
         }}
-        className="bg-gray-200"
+        className="bg-ash-100"
       >
         {mainMenuCarouselList.map((content) => (
           <Carousel.Slide key={content.label}>

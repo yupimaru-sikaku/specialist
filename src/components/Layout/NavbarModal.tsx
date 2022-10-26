@@ -96,16 +96,20 @@ export const NavBarModal = () => {
             </BaseText>
           </Accordion.Control>
         </Accordion.Item>
-        <Accordion.Item value="MEMBER">
-          <Accordion.Control>
-            <BaseText content="middle" color="white">
-              MEMBER
-            </BaseText>
-            <BaseText content="small" color="white">
-              メンバー
-            </BaseText>
-          </Accordion.Control>
-        </Accordion.Item>
+        <Link href="/member">
+          <a>
+            <Accordion.Item value="MEMBER">
+              <Accordion.Control>
+                <BaseText content="middle" color="white">
+                  MEMBER
+                </BaseText>
+                <BaseText content="small" color="white">
+                  メンバー
+                </BaseText>
+              </Accordion.Control>
+            </Accordion.Item>
+          </a>
+        </Link>
       </Accordion>
     </div>
   );

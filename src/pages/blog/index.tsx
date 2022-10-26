@@ -14,7 +14,7 @@ const Blog: NextPage<Props> = (props) => {
   const lagerThanSm = useMediaQuery('sm');
 
   return (
-    <SubLayout title="ブログ一覧 | スペシャリスト協会">
+    <SubLayout title="ブログ一覧 | スペシャリスト育成支援協会">
       <div className="flex flex-col sm:flex-row ">
         <BlogList blog={props} />
 

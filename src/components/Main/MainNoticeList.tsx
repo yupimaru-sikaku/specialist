@@ -9,7 +9,7 @@ export const MainNoticeList = () => {
   return (
     <Link href="/">
       <a>
-        <h2 className="flex h-32 items-center justify-center bg-gray-300">
+        <h2 className="flex h-32 items-center justify-center bg-ash-100">
           <BaseText content="large">バナーが入る</BaseText>
         </h2>
       </a>

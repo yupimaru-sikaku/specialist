@@ -34,7 +34,7 @@ export const MainYouTubeList = () => {
       </AspectRatio>
 
       <Link href="https://www.youtube.com/">
-        <a className="flex h-10 items-center justify-center bg-gray-200">
+        <a className="flex h-10 items-center justify-center bg-ash-100">
           <BaseText content="middle">他の動画はこちら</BaseText>
         </a>
       </Link>

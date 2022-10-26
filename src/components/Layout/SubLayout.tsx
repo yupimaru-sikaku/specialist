@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const SubLayout: NextPage<Props> = ({
-  title = 'スペシャリスト協会',
+  title = 'スペシャリスト育成支援協会',
   children,
 }) => {
   return (

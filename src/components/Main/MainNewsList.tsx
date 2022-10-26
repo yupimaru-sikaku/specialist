@@ -69,7 +69,7 @@ export const MainNewsList: NextPage<Props> = (props) => {
         )}
       </article>
       <Link href="/">
-        <a className="flex h-10 items-center justify-center bg-gray-200">
+        <a className="flex h-10 items-center justify-center bg-ash-100">
           <BaseText content="middle">ニュース一覧へ</BaseText>
         </a>
       </Link>
