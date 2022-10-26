@@ -37,7 +37,8 @@ export const Navbar = () => {
         transitionDuration={600}
         transitionTimingFunction="ease"
         fullScreen
-        classNames={{ modal: 'bg-navy-900' }}
+        title="メニュー"
+        classNames={{ modal: 'bg-navy-900', title: 'text-white' }}
       >
         <NavBarModal />
       </Modal>
