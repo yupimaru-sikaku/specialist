@@ -1,6 +1,7 @@
 import { ActionIcon } from '@mantine/core';
 import { IconMenu2 } from '@tabler/icons';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { NavBarModal } from './NavbarModal';
 
@@ -17,19 +18,21 @@ export const Navbar = () => {
 
   return (
     <header className="flex h-14 items-center justify-between bg-navy-900">
-      <div className="ml-3 flex items-center">
-        <Image
-          src="/specialist_logo_2.webp"
-          priority={true}
-          alt="hero_logo"
-          width={45}
-          height={45}
-        />
-        <div className="ml-2 text-gray-100">
-          <p className='text-xs'>一般社団法人</p>
-          <p className='text-sm'>スペシャリスト育成支援協会</p>
-        </div>
-      </div>
+      <Link href="/">
+        <a className="ml-3 flex items-center">
+          <Image
+            src="/specialist_logo_2.webp"
+            priority={true}
+            alt="hero_logo"
+            width={45}
+            height={45}
+          />
+          <div className="ml-2 text-gray-100">
+            <p className="text-xs">一般社団法人</p>
+            <p className="text-sm">スペシャリスト育成支援協会</p>
+          </div>
+        </a>
+      </Link>
       <ActionIcon onClick={() => setIsModal(true)} className="mr-3">
         <IconMenu2 color="white" />
       </ActionIcon>
