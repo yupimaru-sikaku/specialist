@@ -76,11 +76,11 @@ export const MainMenuCarousel = () => {
         ))}
       </Carousel>
       {isListOpen && contentList && (
-        <ul className="bg-gray-500">
+        <ul className="animate-tracking-in-expand bg-gray-500">
           {contentList.map((content) => (
             <Link href={content.link} key={content.label}>
               <a>
-                <li className="pb-2 hover:cursor-pointer">
+                <li className="p-2 hover:cursor-pointer">
                   <BaseText align="center" content="middle" color="white">
                     {content.label}
                   </BaseText>

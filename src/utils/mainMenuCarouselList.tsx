@@ -13,11 +13,11 @@ export const mainMenuCarouselList: mainMenuCarouselLinkType[] = [
 ];
 
 export const recordList: mainMenuCarouselLinkContentType[] = [
-  { label: 'schedule1', link: '/' },
-  { label: 'schedule2', link: '/' },
-  { label: 'schedule3', link: '/' },
-  { label: 'schedule4', link: '/' },
-  { label: 'schedule5', link: '/' },
+  { label: 'record1', link: '/' },
+  { label: 'record2', link: '/' },
+  { label: 'record3', link: '/' },
+  { label: 'record4', link: '/' },
+  { label: 'record5', link: '/' },
 ];
 
 export const newsList: mainMenuCarouselLinkContentType[] = [
