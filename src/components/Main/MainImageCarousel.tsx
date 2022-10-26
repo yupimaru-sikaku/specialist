@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
-import Image from 'next/image';
+import Autoplay from 'embla-carousel-autoplay';
 
 export const MainImageCarousel = () => {
+  const autoplay = useRef(Autoplay({ delay: 2000 }));
+
   return (
     // <div className="w-screen">
     <Carousel
@@ -11,6 +13,9 @@ export const MainImageCarousel = () => {
       align="start"
       // dragFree
       loop
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
       styles={{
         control: {
           opacity: '0.3',

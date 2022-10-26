@@ -3,12 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import { BaseText } from 'src/components/Common/BaseText';
 
-export const MainSponsorList = () => {
+export const MainSupportList = () => {
   return (
     <div>
       <h2 className="flex h-14 items-center justify-center bg-navy-900">
         <BaseText content="large" color="white">
-          スポンサー
+          サポート
         </BaseText>
       </h2>
       <div className="p-vw-20" />

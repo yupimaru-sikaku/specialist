@@ -12,6 +12,7 @@ module.exports = {
       xl: '1400px',
     },
     extend: {
+      // 色を独自設定したいならここ
       colors: {
         navy: {
           900: '#123159',

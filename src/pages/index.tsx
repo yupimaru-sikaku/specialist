@@ -9,6 +9,7 @@ import { MicroCMSListResponse } from 'microcms-js-sdk';
 import { client } from 'src/libs/microCMS/client';
 import { MainYouTubeList } from 'src/components/Main/MainYouTubeList';
 import { MainSponsorList } from 'src/components/Main/MainSponsorList';
+import { MainSupportList } from 'src/components/Main/MainSupportList';
 import { MainNoticeList } from 'src/components/Main/MainNoticeList';
 import { MainIdeal } from 'src/components/Main/MainIdeal';
 
@@ -24,6 +25,7 @@ const Home: NextPage<Props> = (props) => {
       <MainNewsList blog={props} />
       <MainYouTubeList />
       <MainSponsorList />
+      <MainSupportList />
     </Layout>
   );
 };

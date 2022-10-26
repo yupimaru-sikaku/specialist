@@ -25,7 +25,9 @@ export const MainNewsList: NextPage<Props> = (props) => {
           <ul>
             {props.blog.contents.map((content) => (
               <div key={content.id}>
-                <Link href={`/blog/${content.id}}`}>
+                <Link
+                  href={content.link ? content.link : `/blog/${content.id}}`}
+                >
                   <a className="flex h-24">
                     <div className="h-24 w-1/3 overflow-hidden">
                       <Image

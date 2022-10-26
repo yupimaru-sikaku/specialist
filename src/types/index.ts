@@ -16,6 +16,7 @@ export type Blog = {
     revisedAt: string;
     name: string;
   };
+  link: string;
 };
 
 export type headerLinkType = {
@@ -35,8 +36,9 @@ export type recordLinkType = {
 };
 
 export type mainMenuCarouselLinkType = {
-  label: 'SCHEDULE' | 'NEWS' | 'SHOPS' | 'SPONSOR';
+  label: 'RECORD' | 'NEWS' | 'CHARITY' | 'SPONSOR' | 'SUPPORT' | 'MEMBER';
   hiragana: string;
+  link: string;
 };
 
 export type mainMenuCarouselLinkContentType = {

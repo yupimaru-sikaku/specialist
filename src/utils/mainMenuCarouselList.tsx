@@ -4,13 +4,15 @@ import {
 } from 'src/types';
 
 export const mainMenuCarouselList: mainMenuCarouselLinkType[] = [
-  { label: 'SCHEDULE', hiragana: 'スケジュール' },
-  { label: 'NEWS', hiragana: 'ニュース' },
-  { label: 'SHOPS', hiragana: 'ショップ' },
-  { label: 'SPONSOR', hiragana: 'スポンサー' },
+  { label: 'RECORD', hiragana: '実績', link: '' },
+  { label: 'NEWS', hiragana: 'ニュース', link: '' },
+  { label: 'CHARITY', hiragana: 'チャリティー', link: '/charity' },
+  { label: 'SPONSOR', hiragana: 'スポンサー', link: '/sposor' },
+  { label: 'SUPPORT', hiragana: 'サポート', link: '/support' },
+  { label: 'MEMBER', hiragana: 'メンバー', link: '/member' },
 ];
 
-export const scheduleList: mainMenuCarouselLinkContentType[] = [
+export const recordList: mainMenuCarouselLinkContentType[] = [
   { label: 'schedule1', link: '/' },
   { label: 'schedule2', link: '/' },
   { label: 'schedule3', link: '/' },
@@ -24,20 +26,4 @@ export const newsList: mainMenuCarouselLinkContentType[] = [
   { label: 'news3', link: '/' },
   { label: 'news4', link: '/' },
   { label: 'news5', link: '/' },
-];
-
-export const shopList: mainMenuCarouselLinkContentType[] = [
-  { label: 'shop1', link: '/' },
-  { label: 'shop2', link: '/' },
-  { label: 'shop3', link: '/' },
-  { label: 'shop4', link: '/' },
-  { label: 'shop5', link: '/' },
-];
-
-export const sponsorList: mainMenuCarouselLinkContentType[] = [
-  { label: 'sponsor1', link: '/' },
-  { label: 'sponsor2', link: '/' },
-  { label: 'sponsor3', link: '/' },
-  { label: 'sponsor4', link: '/' },
-  { label: 'sponsor5', link: '/' },
 ];

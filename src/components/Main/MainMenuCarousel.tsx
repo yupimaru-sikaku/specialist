@@ -4,15 +4,16 @@ import { Accordion } from '@mantine/core';
 import {
   mainMenuCarouselList,
   newsList,
-  scheduleList,
-  shopList,
-  sponsorList,
+  recordList,
 } from 'src/utils/mainMenuCarouselList';
 import { mainMenuCarouselLinkContentType } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Autoplay from 'embla-carousel-autoplay';
 
 export const MainMenuCarousel = () => {
+  const router = useRouter();
   const [contentType, setContentType] = useState('');
   const [contentList, setContentList] = useState<
     mainMenuCarouselLinkContentType[]
@@ -25,17 +26,13 @@ export const MainMenuCarousel = () => {
       ? setIsListOpen((prevState) => !prevState)
       : setIsListOpen(true);
     switch (content) {
-      case 'SCHEDULE':
-        setContentList(scheduleList);
+      case 'RECORD':
+        setContentList(recordList);
         break;
       case 'NEWS':
         setContentList(newsList);
         break;
-      case 'SHOPS':
-        setContentList(shopList);
-        break;
-      case 'SPONSOR':
-        setContentList(sponsorList);
+      default:
         break;
     }
   };
@@ -58,10 +55,14 @@ export const MainMenuCarousel = () => {
       >
         {mainMenuCarouselList.map((content) => (
           <Carousel.Slide key={content.label}>
-            <Accordion disableChevronRotation>
+            <Accordion disableChevronRotation sx={{ width: '150px' }}>
               <Accordion.Item value="customization">
                 <Accordion.Control
-                  onClick={() => handleSetContentType(content.label)}
+                  onClick={() =>
+                    content.link
+                      ? router.push(content.link)
+                      : handleSetContentType(content.label)
+                  }
                   sx={{ padding: '10px' }}
                 >
                   <div className="flex flex-col items-center justify-center">
@@ -77,10 +78,7 @@ export const MainMenuCarousel = () => {
       {isListOpen && contentList && (
         <ul className="bg-gray-500">
           {contentList.map((content) => (
-            <Link
-              href={content.link}
-              key={content.label}
-            >
+            <Link href={content.link} key={content.label}>
               <a>
                 <li className="pb-2 hover:cursor-pointer">
                   <BaseText align="center" content="middle" color="white">
