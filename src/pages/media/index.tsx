@@ -1,15 +1,15 @@
 import React from 'react';
 import { Layout } from 'src/components/Layout/Layout';
 import { MainMenuCarousel } from 'src/components/Main/MainMenuCarousel';
-import { SupportList } from 'src/components/Support/SupportList';
+import { MediaList } from 'src/components/Media/MediaList';
 
-const Support = () => {
+const Media = () => {
   return (
-    <Layout title="サポート | スペシャリスト育成支援協会">
+    <Layout title="メディア一覧 | スペシャリスト育成支援協会">
       <MainMenuCarousel />
-      <SupportList />
+      <MediaList />
     </Layout>
   );
 };
 
-export default Support;
+export default Media;

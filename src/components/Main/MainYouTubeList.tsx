@@ -4,12 +4,11 @@ import { BaseText } from 'src/components/Common/BaseText';
 import YouTube from 'react-youtube';
 import { AspectRatio } from '@mantine/core';
 
-const opts = {
-  width: '100%',
-  height: '100%',
-};
-
 export const MainYouTubeList = () => {
+  const opts = {
+    width: '100%',
+    height: '100%',
+  };
   return (
     <div>
       <h2 className="flex h-14 items-center justify-center bg-navy-900">
@@ -33,7 +32,7 @@ export const MainYouTubeList = () => {
         <YouTube videoId="G6rtTs7WGBw" opts={opts} />
       </AspectRatio>
 
-      <Link href="https://www.youtube.com/">
+      <Link href="/media">
         <a className="flex h-10 items-center justify-center bg-ash-100">
           <BaseText content="middle">他の動画はこちら</BaseText>
         </a>
