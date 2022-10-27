@@ -1,29 +1,49 @@
-import { Badge, Divider } from '@mantine/core';
-import { MicroCMSListResponse } from 'microcms-js-sdk';
+import {
+  MicroCMSContentId,
+  MicroCMSDate,
+  MicroCMSListResponse,
+} from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-import { Blog } from 'src/types';
-import { formatDate, isOneMonthAgo } from 'src/utils';
+import React, { useState } from 'react';
+import { Blog, blogCategoryArr } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
+import { formatDate, isOneMonthAgo } from 'src/utils';
+import { Badge, Divider, Pagination } from '@mantine/core';
 
 type Props = {
-  blog: MicroCMSListResponse<Blog>;
+  blog: (Blog & MicroCMSContentId & MicroCMSDate)[];
+  totalCount: number;
 };
 
-export const MainNewsList: NextPage<Props> = (props) => {
+export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
+  const [category, setCategory] = useState(blogCategoryArr);
+  const [activePage, setPage] = useState(1);
+
+  const mediaCountPerPage = 3;
+  const totalPage = Math.ceil(totalCount / mediaCountPerPage);
+
+  const indexOfLastMedia = activePage * mediaCountPerPage;
+  const indexOfFirstMedia = indexOfLastMedia - mediaCountPerPage;
+  const currentMediaList = blog.slice(indexOfFirstMedia, indexOfLastMedia);
+
   return (
-    <div>
-      <h2 className="flex h-14 items-center justify-center bg-navy-900">
-        <BaseText content="large" color="white">
-          ニュース
-        </BaseText>
-      </h2>
+    <main>
+      <ul className="flex flex-wrap gap-3 bg-navy-900 p-3">
+        {category.map((content) => (
+          <li
+            key={content}
+            className="cursor-pointer border-b text-xs text-white"
+          >
+            {content}
+          </li>
+        ))}
+      </ul>
       <article>
-        {props.blog.contents && (
+        {blog && (
           <ul>
-            {props.blog.contents.map((content) => (
+            {currentMediaList.map((content) => (
               <li key={content.id}>
                 <Link
                   href={content.link ? content.link : `/blog/${content.id}}`}
@@ -128,12 +148,16 @@ export const MainNewsList: NextPage<Props> = (props) => {
             ))}
           </ul>
         )}
+        <div className="p-vw-10" />
+        <Pagination
+          position="center"
+          page={activePage}
+          initialPage={1}
+          total={totalPage}
+          onChange={setPage}
+        />
+        <div className="p-vw-10" />
       </article>
-      <Link href="/news">
-        <a className="flex h-10 items-center justify-center bg-ash-100">
-          <BaseText content="middle">ニュース一覧へ</BaseText>
-        </a>
-      </Link>
-    </div>
+    </main>
   );
 };

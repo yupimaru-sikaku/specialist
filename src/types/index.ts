@@ -1,5 +1,15 @@
 import { ReactNode } from 'react';
 
+export const blogCategoryArr = [
+  'ALL',
+  'MEDIA',
+  'EVENT',
+  'GOODS',
+  'TICKET',
+  'OTHER',
+  'YOUTUBE',
+] as const;
+
 export type Blog = {
   title: string;
   content: string;
@@ -8,14 +18,7 @@ export type Blog = {
     height: number;
     width: number;
   };
-  category: {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    name: string;
-  };
+  category: typeof blogCategoryArr;
   link: string;
 };
 

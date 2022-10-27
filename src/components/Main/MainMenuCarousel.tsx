@@ -55,7 +55,7 @@ export const MainMenuCarousel = () => {
       >
         {mainMenuCarouselList.map((content) => (
           <Carousel.Slide key={content.label}>
-            <Accordion disableChevronRotation sx={{ width: '150px' }}>
+            <Accordion disableChevronRotation>
               <Accordion.Item value="customization">
                 <Accordion.Control
                   onClick={() =>
