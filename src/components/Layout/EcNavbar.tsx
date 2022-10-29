@@ -33,7 +33,7 @@ export const EcNavbar = () => {
         </a>
       </Link>
       <div className="mr-3 flex">
-        <ActionIcon onClick={() => setOpened(true)}>
+        <ActionIcon>
           <IconShoppingCart color="white" />
         </ActionIcon>
       </div>
