@@ -16,7 +16,7 @@ export const ECMainImageCarousel = () => {
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
       classNames={{
-        indicators: 'static h-6 flex items-center',
+        indicators: 'static h-10 flex items-center',
         indicator: 'w-2 h-2 bg-navy-900',
       }}
     >
