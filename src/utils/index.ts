@@ -9,3 +9,10 @@ export const isOneMonthAgo = (date: string): boolean => {
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
   return new Date(date) > oneMonthAgo;
 };
+
+export const scrollTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
