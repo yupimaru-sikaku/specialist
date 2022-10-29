@@ -10,7 +10,13 @@ import React, { useState } from 'react';
 import { Blog, blogCategoryArr } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import { formatDate, isOneMonthAgo } from 'src/utils';
-import { Badge, Divider, Pagination } from '@mantine/core';
+import {
+  BackgroundImage,
+  Badge,
+  Divider,
+  Pagination,
+  Text,
+} from '@mantine/core';
 
 type Props = {
   blog: (Blog & MicroCMSContentId & MicroCMSDate)[];
@@ -30,6 +36,13 @@ export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
 
   return (
     <main>
+      <BackgroundImage src="/specialist_hero_3.jpg">
+        <div className='h-28 flex items-center justify-end mr-3'>
+          <BaseText content="large" color="white" weight={900}>
+            NEWS
+          </BaseText>
+        </div>
+      </BackgroundImage>
       <ul className="flex flex-wrap gap-3 bg-navy-900 p-3">
         {category.map((content) => (
           <li
