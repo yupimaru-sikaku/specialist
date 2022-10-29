@@ -26,7 +26,7 @@ export const EcNavbar = () => {
             width={45}
             height={45}
           />
-          <div className="ml-2 text-gray-100">
+          <div className="text-gray-100">
             <p className="text-md font-bold">Specialist</p>
             <p className="text-xs">ONLINE SHOP</p>
           </div>
