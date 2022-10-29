@@ -1,14 +1,19 @@
 import React from 'react';
-import { Layout } from 'src/components/Layout/Layout';
 import { MainMenuCarousel } from 'src/components/Main/MainMenuCarousel';
+import { CharityPickUp } from 'src/components/Charity/CharityPickUp';
+import { CharityRecommend } from 'src/components/Charity/CharityRecommend';
 import { CharityList } from 'src/components/Charity/CharityList';
+import { EcLayout } from 'src/components/Layout/EcLayout';
+import { ECMainImageCarousel } from 'src/components/Main/ECMainImageCarousel';
 
 const Charity = () => {
   return (
-    <Layout title="グッズ一覧 | スペシャリスト育成支援協会">
-      <MainMenuCarousel />
-      <CharityList/>
-    </Layout>
+    <EcLayout title="チャリティーグッズ">
+      <ECMainImageCarousel />
+      <CharityPickUp />
+      <CharityRecommend />
+      <CharityList />
+    </EcLayout>
   );
 };
 

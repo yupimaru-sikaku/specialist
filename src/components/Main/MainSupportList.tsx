@@ -12,7 +12,10 @@ export const MainSupportList = () => {
         </BaseText>
       </h2>
       <div className="p-vw-20" />
-      <ul className="flex flex-col items-center gap-10">
+      <ul
+        className="grid items-center gap-8"
+        style={{ gridTemplateColumns: '1fr 1fr' }}
+      >
         <li>
           <Link href="/">
             <a>

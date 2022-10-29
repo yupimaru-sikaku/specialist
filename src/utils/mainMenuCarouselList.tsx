@@ -21,9 +21,9 @@ export const recordList: mainMenuCarouselLinkContentType[] = [
 ];
 
 export const newsList: mainMenuCarouselLinkContentType[] = [
+  { label: 'ニュース一覧', link: '/news' },
   { label: 'news1', link: '/' },
   { label: 'news2', link: '/' },
   { label: 'news3', link: '/' },
   { label: 'news4', link: '/' },
-  { label: 'news5', link: '/' },
 ];
