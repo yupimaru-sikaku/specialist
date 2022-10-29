@@ -15,10 +15,31 @@ export const ECMainImageCarousel = () => {
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
       onMouseLeave={autoplay.current.reset}
-      classNames={{ indicator: 'w-2 h-2' }}
+      classNames={{
+        indicators: 'static h-6 flex items-center',
+        indicator: 'w-2 h-2 bg-navy-900',
+      }}
     >
       <Carousel.Slide>
-        <img src="/specialist_hero.png" alt="hero" className="object-contain" />
+        <img
+          src="/specialist_hero_4.jpg"
+          alt="hero"
+          className="object-contain"
+        />
+      </Carousel.Slide>
+      <Carousel.Slide>
+        <img
+          src="/specialist_hero_5.jpg"
+          alt="hero"
+          className="object-contain"
+        />
+      </Carousel.Slide>
+      <Carousel.Slide>
+        <img
+          src="/specialist_hero_6.jpg"
+          alt="hero"
+          className="object-contain"
+        />
       </Carousel.Slide>
       <Carousel.Slide>
         <img
@@ -33,6 +54,9 @@ export const ECMainImageCarousel = () => {
           alt="hero"
           className="object-contain"
         />
+      </Carousel.Slide>
+      <Carousel.Slide>
+        <img src="/specialist_hero.png" alt="hero" className="object-contain" />
       </Carousel.Slide>
     </Carousel>
     // </div>
