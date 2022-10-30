@@ -1,20 +1,11 @@
 import { GetStaticProps, NextPage } from 'next';
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout } from 'src/components/Layout/Layout';
 import { NewsList } from 'src/components/News/NewsList';
 import { Blog } from 'src/types';
-import {
-  MicroCMSContentId,
-  MicroCMSDate,
-  MicroCMSListResponse,
-} from 'microcms-js-sdk';
+import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { client } from 'src/libs/microCMS/client';
 import { MainMenuCarousel } from 'src/components/Main/MainMenuCarousel';
-import Image from 'next/image';
-import Link from 'next/link';
-import { formatDate, isOneMonthAgo } from 'src/utils';
-import { BaseText } from 'src/components/Common/BaseText';
-import { Badge, Divider, Pagination } from '@mantine/core';
 
 type Props = {
   blog: (Blog & MicroCMSContentId & MicroCMSDate)[];

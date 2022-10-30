@@ -16,7 +16,7 @@ export const CharityRecommend = () => {
       </div>
       <Divider size="xl" color="indigo.9" />
 
-      <div className='p-3'>
+      <div className="p-3">
         <div className="p-vw-2" />
 
         <Carousel

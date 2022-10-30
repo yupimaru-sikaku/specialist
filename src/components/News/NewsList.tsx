@@ -1,22 +1,19 @@
-import {
-  MicroCMSContentId,
-  MicroCMSDate,
-  MicroCMSListResponse,
-} from 'microcms-js-sdk';
+import { MicroCMSContentId, MicroCMSDate } from 'microcms-js-sdk';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Blog, blogCategoryArr } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
-import { formatDate, isOneMonthAgo } from 'src/utils';
+import { formatDate, scrollTop } from 'src/utils';
 import {
   BackgroundImage,
-  Badge,
   Divider,
+  LoadingOverlay,
   Pagination,
-  Text,
 } from '@mantine/core';
+import { NewsBadge } from 'src/components/News/NewsBadge';
+import { usePagination } from '@mantine/hooks';
 
 type Props = {
   blog: (Blog & MicroCMSContentId & MicroCMSDate)[];
@@ -24,6 +21,7 @@ type Props = {
 };
 
 export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
+  const [visible, setVisible] = useState(false);
   const [category, setCategory] = useState(blogCategoryArr);
   const [activePage, setPage] = useState(1);
 
@@ -34,10 +32,25 @@ export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
   const indexOfFirstMedia = indexOfLastMedia - mediaCountPerPage;
   const currentMediaList = blog.slice(indexOfFirstMedia, indexOfLastMedia);
 
+  const pagination = usePagination({
+    total: totalPage,
+    initialPage: 1,
+    onChange(page) {
+      setVisible(true);
+      scrollTop();
+      setPage(page);
+      setVisible(false);
+    },
+  });
+
+  if (visible) {
+    return <LoadingOverlay visible={visible} overlayBlur={2} />;
+  }
+
   return (
     <main>
       <BackgroundImage src="/specialist_hero_3.jpg">
-        <div className='h-28 flex items-center justify-end mr-3'>
+        <div className="mr-3 flex h-28 items-center justify-end">
           <BaseText content="large" color="white" weight={900}>
             NEWS
           </BaseText>
@@ -78,78 +91,7 @@ export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
                           {formatDate(content.createdAt)}
                         </BaseText>
                       </time>
-                      <div className="flex flex-wrap gap-1">
-                        {!isOneMonthAgo(content.createdAt) && (
-                          <Badge
-                            color="yellow"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            新着
-                          </Badge>
-                        )}
-                        {content.category.indexOf('MEDIA') !== -1 && (
-                          <Badge
-                            color="green"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            MEDIA
-                          </Badge>
-                        )}
-                        {content.category.indexOf('EVENT') !== -1 && (
-                          <Badge
-                            color="cyan"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            EVENT
-                          </Badge>
-                        )}
-                        {content.category.indexOf('GOODS') !== -1 && (
-                          <Badge
-                            color="blue"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            GOODS
-                          </Badge>
-                        )}
-                        {content.category.indexOf('TICKET') !== -1 && (
-                          <Badge
-                            color="indigo"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            TICKET
-                          </Badge>
-                        )}
-                        {content.category.indexOf('OTHER') !== -1 && (
-                          <Badge
-                            color="gray"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            OTHER
-                          </Badge>
-                        )}
-                        {content.category.indexOf('YOUTUBE') !== -1 && (
-                          <Badge
-                            color="red"
-                            size="xs"
-                            radius="xs"
-                            variant="filled"
-                          >
-                            YOUTUBE
-                          </Badge>
-                        )}
-                      </div>
+                      <NewsBadge content={content} />
                       <BaseText content="small" lineClamp={2} color="dark">
                         {content.title}
                       </BaseText>
@@ -167,7 +109,7 @@ export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
           page={activePage}
           initialPage={1}
           total={totalPage}
-          onChange={setPage}
+          onChange={pagination.setPage}
         />
         <div className="p-vw-10" />
       </article>
