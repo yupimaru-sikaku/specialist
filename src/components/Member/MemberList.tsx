@@ -3,7 +3,6 @@ import React from 'react';
 import { BaseText } from 'src/components/Common/BaseText';
 import Image from 'next/image';
 import { miyazatoRecordLink } from 'src/utils/miyazatoRecordLink';
-import { miyazatoCareerLink } from 'src/utils/miyazatoCareerLink';
 import memberList from 'src/utils/memberList.json';
 import { DataTable } from 'mantine-datatable';
 
@@ -24,8 +23,8 @@ export const MemberList = () => {
             <div className="w-2/5">
               <Image
                 src="/career_miyazato.webp"
-                width={100}
-                height={130}
+                width={80}
+                height={100}
                 layout="responsive"
                 alt="miyazato_pic"
                 className="rounded-sm"
@@ -64,34 +63,6 @@ export const MemberList = () => {
         <div className="p-vw-10" />
 
         <section className="text-center md:w-1/2">
-          <BaseText content="large" align="center" weight={900} color="yellow">
-            略歴
-          </BaseText>
-          <div className="p-vw-10" />
-
-          <ul>
-            {miyazatoCareerLink.map((career) => {
-              return (
-                <div key={career.content}>
-                  <li
-                    className="grid"
-                    style={{ gridTemplateColumns: '35% 5% 1fr' }}
-                  >
-                    <BaseText content="middle" align="end">
-                      {career.date}
-                    </BaseText>
-                    <div></div>
-                    <BaseText content="middle" align="start" color="dark">
-                      {career.content}
-                    </BaseText>
-                  </li>
-                  <div className="p-vw-4" />
-                </div>
-              );
-            })}
-          </ul>
-
-          <div className="p-vw-10" />
           <BaseText content="large" align="center" color="yellow" weight={900}>
             実績
           </BaseText>
@@ -139,7 +110,7 @@ export const MemberList = () => {
           records={memberList}
         ></DataTable>
         <BaseText content="small" align="start">
-          ※五十音順
+          ※五十音順（竹田除く）
         </BaseText>
 
         <div className="p-vw-10" />
