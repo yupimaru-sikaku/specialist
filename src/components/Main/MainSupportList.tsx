@@ -13,7 +13,7 @@ export const MainSupportList = () => {
         </BaseText>
       </h2>
       <div className="p-vw-20" />
-      <ul className="grid gap-8" style={{ gridTemplateColumns: '1fr 1fr' }}>
+      <ul className="grid gap-8 p-3" style={{ gridTemplateColumns: '1fr 1fr' }}>
         {supportLink.map((content) => (
           <Link href={content.link} key={content.name}>
             <a className="flex flex-col gap-5">
