@@ -11,4 +11,5 @@ export const supportLink = [
   },
   { name: '一般社団法人日本美容改革推進協会', link: '#', src: '/jpa.webp' },
   { name: 'マイケル・ジャクトン', link: '#', src: '/michael_jackton.webp' },
+  { name: '竹田会計事務所', link: '#', src: '/takeda.webp' },
 ];
