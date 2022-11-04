@@ -7,7 +7,7 @@ export const supportLink = [
   {
     name: '株式会社CHAINONエンターテインメント',
     link: '#',
-    src: '/CHAINON.webp',
+    src: '/chainon.webp',
   },
   { name: '一般社団法人日本美容改革推進協会', link: '#', src: '/jpa.webp' },
   { name: 'マイケル・ジャクトン', link: '#', src: '/michael_jackton.webp' },
