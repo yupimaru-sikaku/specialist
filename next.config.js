@@ -4,4 +4,8 @@ module.exports = {
   images: {
     domains: ['images.microcms-assets.io'],
   },
+  // カスタムフォントの有効化
+  experimental: {
+    optimizeFonts: true,
+  },
 };

@@ -15,18 +15,6 @@ export default class _Document extends Document {
             sizes="180x180"
             href="/favicons/apple-touch-icon.png"
           />
-          {/* <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicons/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicons/favicon-16x16.png"
-          /> */}
           <link rel="manifest" href="/favicons/site.webmanifest" />
           <link
             rel="mask-icon"
@@ -34,6 +22,10 @@ export default class _Document extends Document {
             color="#000000"
           />
           <link rel="shortcut icon" href="/favicons/favicon.ico" />{' '}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Courgette&family=Nothing+You+Could+Do&display=swap"
+            rel="stylesheet"
+          ></link>
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta
             name="msapplication-config"

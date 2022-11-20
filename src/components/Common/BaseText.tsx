@@ -13,15 +13,26 @@ type Props = {
   span?: boolean;
   variant?: 'link' | 'text' | 'gradient';
   weight?: number;
-  content: 'large' | 'middle' | 'small';
-  lineHeight?: string;
-  letterSpacing?: string;
+  content?: 'large' | 'middle' | 'small';
+  lineHeight?: number;
+  letterSpacing?: number;
+  margin?: string;
+  marginTop?: string;
+  marginBottom?: string;
+  marginRight?: string;
+  marginLeft?: string;
+  padding?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
+  paddingRight?: string;
+  paddingLeft?: string;
+  fontFamily?: string;
 };
 
 export const BaseText: NextPage<Props> = ({
   align,
   children,
-  color = 'gray',
+  color,
   gradient,
   // ex）gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
   lineClamp,
@@ -29,40 +40,71 @@ export const BaseText: NextPage<Props> = ({
   span,
   variant = 'text',
   weight = 400,
-  content,
-  lineHeight = '2',
+  content = 'middle',
+  lineHeight = 'normal',
   letterSpacing,
+  margin,
+  marginTop,
+  marginBottom,
+  marginRight,
+  marginLeft,
+  padding,
+  paddingTop,
+  paddingBottom,
+  paddingRight,
+  paddingLeft,
+  fontFamily,
 }) => {
   const [fontSize, setFontSize] = useState<number>();
   const lagerThanXs = useMediaQuery('xs');
   const lagerThanMd = useMediaQuery('md');
 
   useEffect(() => {
-    switch (content) {
-      case 'large':
-        setFontSize(lagerThanMd ? 32 : lagerThanXs ? 28 : 20);
-        break;
-      case 'middle':
-        setFontSize(lagerThanMd ? 20 : lagerThanXs ? 18 : 16);
-        break;
-      case 'small':
-        setFontSize(lagerThanMd ? 16 : lagerThanXs ? 14 : 12);
-        break;
-      default:
-        setFontSize(18);
+    if (size && typeof size === 'number') {
+      setFontSize(lagerThanMd ? size : lagerThanXs ? size / 2 : size / 3);
+    } else {
+      switch (content) {
+        case 'large':
+          setFontSize(lagerThanMd ? 32 : lagerThanXs ? 28 : 20);
+          break;
+        case 'middle':
+          setFontSize(lagerThanMd ? 20 : lagerThanXs ? 18 : 16);
+          break;
+        case 'small':
+          setFontSize(lagerThanMd ? 16 : lagerThanXs ? 14 : 12);
+          break;
+        default:
+          setFontSize(18);
+      }
     }
   }, [lagerThanMd, lagerThanXs]);
 
   return (
     <Text
+      italic
       align={align}
       color={color}
+      span={span}
       gradient={gradient}
       lineClamp={lineClamp}
-      size={size ? size : fontSize}
+      size={fontSize}
       variant={variant}
       weight={weight}
-      sx={{ lineHeight: lineHeight, letterSpacing: letterSpacing }}
+      sx={{
+        lineHeight: lineHeight,
+        letterSpacing: letterSpacing,
+        margin: margin,
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+        marginRight: marginRight,
+        marginLeft: marginLeft,
+        padding: padding,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
+        paddingRight: paddingRight,
+        paddingLeft: paddingLeft,
+        fontFamily: fontFamily,
+      }}
     >
       {children}
     </Text>
