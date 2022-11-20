@@ -105,7 +105,13 @@ export const MemberList = () => {
           withColumnBorders
           columns={[
             { accessor: 'name', title: '名前', width: '40%' },
-            { accessor: 'post', title: '職種' },
+            {
+              accessor: 'post',
+              title: '職種',
+              cellsSx: () => ({
+                whiteSpace: 'pre-wrap',
+              }),
+            },
           ]}
           records={memberList}
         ></DataTable>

@@ -1,12 +1,12 @@
 [
   {
     "name": "梅岡 比俊",
-    "post": "医療法人社団梅華会 理事長 / 合同会社MAF 代表社員"
+    "post": "医療法人社団梅華会 理事長\n合同会社MAF 代表社員"
   },
-  { "name": "小川 起央", "post": "" },
+  { "name": "小川 起央", "post": "八景観光株式会社 取締役" },
   {
     "name": "坂口 貴徳",
-    "post": "株式会社CHAINONエンターテインメント代表取締役 / 一般社団法人日本美容改革推進協会 代表理事"
+    "post": "株式会社CHAINONエンターテインメント代表取締役\n一般社団法人日本美容改革推進協会 代表理事\n株式会社C.I.Gホールディングス代表取締役"
   },
   { "name": "清水 健太", "post": "DCB株式会社（仮）代表取締役社長" },
   { "name": "鈴木 啓治", "post": "合同会社Tk-Two 代表社員" },
@@ -17,10 +17,13 @@
   },
   {
     "name": "土井長 慶宗",
-    "post": "朝日放送テレビ株式会社 プロデューサー / NOVAREX株式会社 代表取締役社長"
+    "post": "朝日放送テレビ株式会社 プロデューサー\nNOVAREX株式会社 代表取締役社長"
   },
   { "name": "中井 健太", "post": "株式会社石富プロパティー 代表取締役社長" },
-  { "name": "藤原 一正", "post": "" },
+  {
+    "name": "藤原 一正",
+    "post": "【TOKYO CULTURE CLUB】\nFoot Locker atmos japan official agency\nRANZ entertainment\n株式会社Calm\n株式会社SSSS\n株式会社Michelle Lifeworks 代表取締役"
+  },
   { "name": "森 光司", "post": "百姓家 森農園経営" },
   { "name": "竹田 臣征", "post": "竹田会計事務所・社会保険労務士事務所 代表" }
 ]
