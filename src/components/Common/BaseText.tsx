@@ -14,7 +14,7 @@ type Props = {
   variant?: 'link' | 'text' | 'gradient';
   weight?: number;
   content?: 'large' | 'middle' | 'small';
-  lineHeight?: number;
+  lineHeight?: number | string;
   letterSpacing?: number | string;
   margin?: string;
   marginTop?: string;
