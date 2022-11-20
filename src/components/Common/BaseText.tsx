@@ -15,7 +15,7 @@ type Props = {
   weight?: number;
   content?: 'large' | 'middle' | 'small';
   lineHeight?: number;
-  letterSpacing?: number;
+  letterSpacing?: number | string;
   margin?: string;
   marginTop?: string;
   marginBottom?: string;
@@ -53,7 +53,7 @@ export const BaseText: NextPage<Props> = ({
   paddingBottom,
   paddingRight,
   paddingLeft,
-  fontFamily,
+  fontFamily = 'Verdana, sans-serif',
 }) => {
   const [fontSize, setFontSize] = useState<number>();
   const lagerThanXs = useMediaQuery('xs');
@@ -81,7 +81,6 @@ export const BaseText: NextPage<Props> = ({
 
   return (
     <Text
-      italic
       align={align}
       color={color}
       span={span}
