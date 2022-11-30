@@ -34,3 +34,4 @@ export const getPath = (pathKey: keyof typeof PATH, ...args: string[]) => {
 
   return '/' + newPath.join('/');
 };
+
