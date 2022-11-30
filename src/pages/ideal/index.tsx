@@ -33,8 +33,8 @@ const Ideal = () => {
           ))}
           <div className="p-vw-10" />
         </ul>
-        <div className="px-6">
-          <BaseText color="dimmed" lineHeight={2}>
+        <div className="px-6 sm:px-12">
+          <BaseText color="dimmed" lineHeight={2} align="center">
             足下に、一本の「線」が引かれている。
             <br />
             断りもなく引かれたその線を、越えるかどうか悩む人がいる。越えられない、と引き返す人がある。
@@ -68,7 +68,7 @@ const Ideal = () => {
         </div>
         <div className="p-vw-20" />
         <Link href={getPath('INDEX')}>
-          <a className='block text-center'>
+          <a className="block text-center">
             <Button
               variant="default"
               color="dark"
@@ -85,3 +85,4 @@ const Ideal = () => {
 };
 
 export default Ideal;
+
