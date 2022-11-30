@@ -1,26 +1,10 @@
-import { Space } from '@mantine/core';
 import React from 'react';
 import { BaseText } from '../Common/BaseText';
-
-const IDEAL_WORD = [
-  { ja: '尖ったままでいろ', en: 'keep your gifts.' },
-  {
-    ja: '理解されるな、思い知らせろ',
-    en: "Don't be understood,make some realize.",
-  },
-  {
-    ja: 'みんな、尖って生まれてきた',
-    en: 'stay genius.',
-  },
-  {
-    ja: '出すぎた杭を、世界に打ち込む',
-    en: 'no one can ignore us.',
-  },
-  {
-    ja: '一線を、超えてゆけ',
-    en: "Don't worry about bystanders.",
-  },
-];
+import { IconChevronRight } from '@tabler/icons';
+import { Button } from '@mantine/core';
+import { getPath } from 'src/libs/const';
+import Link from 'next/link';
+import { IDEAL_WORD } from 'src/utils/idealWord';
 
 export const MainIdeal = () => {
   return (
@@ -34,15 +18,28 @@ export const MainIdeal = () => {
         <div className="p-vw-20" />
         {IDEAL_WORD.map((word) => (
           <li key={word.ja}>
-            <BaseText content="large" fontFamily="Courgette">
+            <BaseText content="large" fontFamily="Courgette" color="dark">
               {word.ja}
-              <br></br>
+            </BaseText>
+            <BaseText content="large" fontFamily="Courgette" color="dimmed">
               {word.en}
             </BaseText>
             <div className="p-vw-10" />
           </li>
         ))}
         <div className="p-vw-10" />
+        <Link href={getPath('IDEAL')}>
+          <a>
+            <Button
+              variant="default"
+              color="dark"
+              leftIcon={<IconChevronRight />}
+            >
+              理念詳細
+            </Button>
+          </a>
+        </Link>
+        <div className="p-vw-20" />
       </ul>
     </div>
   );
