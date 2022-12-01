@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Blog, blogCategoryArr } from 'src/types';
+import { Blog } from 'src/types';
 import { BaseText } from 'src/components/Common/BaseText';
 import { formatDate, scrollTop } from 'src/utils';
 import {
@@ -22,7 +22,7 @@ type Props = {
 
 export const NewsList: NextPage<Props> = ({ blog, totalCount }) => {
   const [visible, setVisible] = useState(false);
-  const [category, setCategory] = useState(blogCategoryArr);
+  const [category, setCategory] = useState([]);
   const [activePage, setPage] = useState(1);
 
   const mediaCountPerPage = 3;

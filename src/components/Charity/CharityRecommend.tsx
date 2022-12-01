@@ -39,6 +39,7 @@ export const CharityRecommend = () => {
                   width={100}
                   height={100}
                   layout="responsive"
+                  priority={false}
                 />
                 <BaseText content="small" color="dark" weight={900}>
                   ¥2,000（税込）
@@ -54,6 +55,7 @@ export const CharityRecommend = () => {
                   width={100}
                   height={100}
                   layout="responsive"
+                  priority={false}
                 />
                 <BaseText content="small" color="dark" weight={900}>
                   ¥3,000（税込）
@@ -69,6 +71,7 @@ export const CharityRecommend = () => {
                   width={100}
                   height={100}
                   layout="responsive"
+                  priority={false}
                 />
                 <BaseText content="small" color="dark" weight={900}>
                   ¥4,000（税込）
@@ -84,6 +87,7 @@ export const CharityRecommend = () => {
                   width={100}
                   height={100}
                   layout="responsive"
+                  priority={false}
                 />
                 <BaseText content="small" color="dark" weight={900}>
                   ¥5,000（税込）

@@ -13,7 +13,7 @@ import { useGetBlogListSearchQuery } from 'src/ducks/blog/query';
 import { IconBackspace } from '@tabler/icons';
 import { BaseText } from 'src/components/Common/BaseText';
 import { BaseButton } from 'src/components/Common/BaseButton';
-import { BrandLogoList } from 'src/components/Common/BrandLogoList';
+// import { BrandLogoList } from 'src/components/Common/BrandLogoList';
 
 type Props = {
   blog: MicroCMSListResponse<Blog>;
@@ -86,7 +86,7 @@ export const BlogList: NextPage<Props> = (props) => {
 
       <div className="p-vw-8" />
       <Divider />
-      <BrandLogoList />
+      {/* <BrandLogoList /> */}
       <Divider />
       <div className="p-vw-8" />
 

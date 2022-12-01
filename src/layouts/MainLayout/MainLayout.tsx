@@ -1,16 +1,16 @@
-import { CustomLayout, NextPage } from 'next';
+import { NextPage } from 'next';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
+import { Navbar } from 'src/components/Layout/Navbar';
 import { Footer } from 'src/components/Layout/Footer';
-import { EcNavbar } from 'src/components/Layout/EcNavbar';
 
 type Props = {
   title: string;
   children: ReactNode;
 };
 
-export const EcLayout: CustomLayout = ({
-  title = 'スペシャリスト育成支援協会',
+export const MainLayout: NextPage<Props> = ({
+  title = 'スペシャリスト育成支援協会',
   children,
 }) => {
   return (
@@ -18,7 +18,7 @@ export const EcLayout: CustomLayout = ({
       <Head>
         <title>{title}</title>
       </Head>
-      <EcNavbar />
+      <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />
     </div>

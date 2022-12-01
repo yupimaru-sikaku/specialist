@@ -7,7 +7,7 @@ import { IconClock } from '@tabler/icons';
 import { IconAlarm } from '@tabler/icons';
 import { BaseText } from 'src/components/Common/BaseText';
 import { Divider } from '@mantine/core';
-import { BrandLogoList } from '../Common/BrandLogoList';
+// import { BrandLogoList } from '../Common/BrandLogoList';
 
 type Props = {
   blog: Blog & MicroCMSContentId & MicroCMSDate;
@@ -42,7 +42,7 @@ export const BlogDetail: NextPage<Props> = (props) => {
 
       <div className="p-vw-4" />
       <Divider />
-      <BrandLogoList />
+      {/* <BrandLogoList /> */}
       <Divider />
       <div className="p-vw-20" />
 

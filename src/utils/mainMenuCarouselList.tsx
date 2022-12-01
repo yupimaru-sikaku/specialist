@@ -6,7 +6,7 @@ import {
 export const mainMenuCarouselList: mainMenuCarouselLinkType[] = [
   { label: 'RECORD', hiragana: '実績', link: '' },
   { label: 'NEWS', hiragana: 'ニュース', link: '' },
-  { label: 'CHARITY', hiragana: 'チャリティー', link: '/charity' },
+  { label: 'CHARITY', hiragana: 'チャリティー', link: '/charity/sample' },
   { label: 'SPONSOR', hiragana: 'スポンサー', link: '/sponsor' },
   { label: 'SUPPORT', hiragana: 'サポート', link: '/support' },
   { label: 'MEMBER', hiragana: 'メンバー', link: '/member' },

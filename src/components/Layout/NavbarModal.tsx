@@ -37,7 +37,9 @@ export const NavBarModal = () => {
             <Accordion.Panel key={content.label}>
               <Link href={content.link}>
                 <a className="text-center">
-                  <BaseText content="middle">{content.label}</BaseText>
+                  <BaseText content="middle" color="white">
+                    {content.label}
+                  </BaseText>
                 </a>
               </Link>
             </Accordion.Panel>
@@ -56,13 +58,15 @@ export const NavBarModal = () => {
             <Accordion.Panel key={content.label}>
               <Link href={content.link}>
                 <a className="text-center">
-                  <BaseText content="middle">{content.label}</BaseText>
+                  <BaseText content="middle" color="white">
+                    {content.label}
+                  </BaseText>
                 </a>
               </Link>
             </Accordion.Panel>
           ))}
         </Accordion.Item>
-        <Link href="/charity">
+        <Link href="/charity/sample">
           <a>
             <Accordion.Item value="CHARITY">
               <Accordion.Control>

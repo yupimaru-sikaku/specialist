@@ -85,4 +85,3 @@ const Ideal = () => {
 };
 
 export default Ideal;
-

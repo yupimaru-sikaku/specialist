@@ -10,7 +10,7 @@ export const MainNoticeList = () => {
     <Link href="/">
       <a>
         <h2 className="flex h-32 items-center justify-center bg-ash-100">
-          <BaseText content="large">バナーが入る</BaseText>
+          <BaseText content="large">バナー</BaseText>
         </h2>
       </a>
     </Link>

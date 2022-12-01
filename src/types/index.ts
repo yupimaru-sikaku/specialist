@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
-
-export const blogCategoryArr = [
-  'ALL',
-  'MEDIA',
-  'EVENT',
-  'GOODS',
-  'TICKET',
-  'OTHER',
-  'YOUTUBE',
+export const charityGenreArr = [
+  'アパレル',
+  'タオル',
+  'アクセサリー',
+  'その他',
 ] as const;
+
+export type Admim = {
+  email: string;
+  password: string;
+  password_confirm: string;
+};
 
 export type Blog = {
   title: string;
@@ -18,7 +19,14 @@ export type Blog = {
     height: number;
     width: number;
   };
-  category: typeof blogCategoryArr;
+  category:
+    | 'ALL'
+    | 'MEDIA'
+    | 'EVENT'
+    | 'GOODS'
+    | 'TICKET'
+    | 'OTHER'
+    | 'YOUTUBE';
   link: string;
 };
 
@@ -47,4 +55,27 @@ export type mainMenuCarouselLinkType = {
 export type mainMenuCarouselLinkContentType = {
   label: string;
   link: string;
+};
+
+export type Charity = {
+  code: string;
+  stripeId: string;
+  name: string;
+  price: number;
+  description: string;
+  genre: 'アパレル' | 'タオル' | 'アクセサリー' | 'その他';
+  link: string;
+  sales: number;
+  isReserved: boolean;
+  isDisplay: boolean;
+  isChecked: boolean;
+  detailList: {
+    color: string;
+    size: string;
+    stock: number;
+    sales: number;
+  }[];
+  imageList: File[];
+  createdAt?: string;
+  updatedAt?: string;
 };

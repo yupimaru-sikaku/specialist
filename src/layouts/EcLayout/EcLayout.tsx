@@ -1,4 +1,4 @@
-import { CustomLayout, NextPage } from 'next';
+import { NextPage } from 'next';
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
 import { Footer } from 'src/components/Layout/Footer';
@@ -9,7 +9,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const EcLayout: CustomLayout = ({
+export const EcLayout: NextPage<Props> = ({
   title = 'スペシャリスト育成支援協会',
   children,
 }) => {

@@ -100,6 +100,7 @@ export const MemberList = () => {
         <div className="p-vw-10" />
 
         <DataTable
+          idAccessor="name"
           striped
           withBorder
           withColumnBorders
