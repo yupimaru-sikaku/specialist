@@ -79,3 +79,4 @@ export type Charity = {
   createdAt?: string;
   updatedAt?: string;
 };
+
